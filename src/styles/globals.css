@@ -18,36 +18,47 @@
         font-family: 'Asap', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     }
 
+    main {
+        overflow: hidden;
+    }
+
+    p {
+        line-height: 1.6;
+        color: var(--text-secondary, #666);
+    }
+
+    h1,
+    h2,
+    h3 {
+        margin: 0 0 1rem 0;
+    }
+
     h1 {
         @apply text-4xl font-bold tracking-tight sm:text-5xl;
     }
 
     h2 {
         @apply text-2xl font-bold sm:text-3xl;
+        text-align: center;
+        color: var(--text-primary, #1a1a1a);
+        margin-bottom: 2rem;
     }
 
     a:not(.btn) {
         @apply underline transition hover:opacity-80;
-    }
-
-    pre {
-        @apply p-6 overflow-x-auto rounded-lg;
-    }
-
-    :not(pre) > code {
-        @apply px-1 py-0.5 font-mono rounded bg-gray-900 text-primary;
-        font-size: 0.9em;
     }
 }
 
 @layer components {
     .content-section {
         border-radius: 12px;
-        margin-bottom: 5rem;
+        margin: 1rem auto 4rem auto;
         background-color: white;
         text-align: center;
-        border-radius: 12px;
-        margin-bottom: 2rem;
+        max-width: 1200px;
+        width: 100%;
+
+        @apply px-3 sm:px-12 py-6 sm:py-12;
     }
 
     .content-section p {
@@ -58,18 +69,50 @@
         margin-right: auto;
     }
 
+    .content-section p:last-child {
+        margin-bottom: 0;
+    }
+
+    .btn,
+    .ingredient,
+    .step,
+    .variant-card {
+        transition: all 0.3s ease;
+    }
+
+    .btn:hover,
+    .ingredient:hover,
+    .step:hover,
+    .variant-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+    }
+
     .btn {
-        @apply inline-flex items-center justify-center gap-2 bg-primary text-primary-content cursor-pointer text-center font-semibold no-underline transition-colors;
+        @apply inline-flex items-center justify-center gap-2 bg-primary text-primary-content cursor-pointer text-center font-bold no-underline;
         padding: var(--btn-py, 0.875rem) var(--btn-px, 1.25rem);
         font-size: var(--btn-font-size, 0.875rem);
         border-radius: var(--btn-border-radius, 0.25rem);
+        border: 2px solid transparent;
 
         &:hover {
             @apply bg-primary/85;
+            transform: translateY(-2px);
         }
 
         &:disabled {
             @apply text-gray-400 bg-gray-700;
+        }
+    }
+
+    .btn-secondary {
+        background-color: transparent;
+        color: #d4af37;
+        border-color: #d4af37;
+
+        &:hover {
+            background-color: transparent;
+            border-color: black;
         }
     }
 
