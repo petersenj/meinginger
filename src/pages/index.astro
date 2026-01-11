@@ -1,19 +1,587 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Markdown from '../components/Markdown.astro';
-
-const explainer = `
-An Astro website can go way beyond static pages - on the right platform.
-
-Netlify supports not only [Streaming SSR](https://docs.astro.build/en/guides/server-side-rendering/#html-streaming) and fast [Edge Middleware](https://docs.astro.build/en/guides/middleware/), but also [on-demand revalidation](https://www.netlify.com/blog/cache-tags-and-purge-api-on-netlify/) and [stale-while-revalidate](https://www.netlify.com/blog/swr-and-fine-grained-cache-control/). 
-Any page or data can be rebuilt only when needed, without site visitors ever getting a performance hit.
-`;
 ---
 
-<Layout title="Welcome to Astro.">
-    <h1 class="mb-10">Netlify Platform Starter for Astro</h1>
-    <Markdown content={explainer} class="mb-10 text-lg" />
-    <p>
-        <a href="https://docs.netlify.com/frameworks/astro/" class="btn btn-lg sm:min-w-64">Read the Docs</a>
-    </p>
+<Layout title="Mein Ginger - Der Ingwer-Mehrfruchtsaft mit Kick">
+    <main class="mein-ginger-landing" role="main" aria-label="Mein Ginger Produktseite">
+        {/* Hero Section */}
+        <section class="content-section hero" aria-labelledby="hero-heading">
+            <div class="hero-content">
+                <h1 id="hero-heading">Mein Ginger</h1>
+                <p class="tagline" role="doc-subtitle">FEEL THE BOOST!</p>
+                <p class="subtitle">Hausgemachter Ingwer-Mehrfruchtsaft, mit Wumms und kräftig im Geschmack</p>
+                <div class="cta-buttons" role="region" aria-label="Aktionsschaltflächen">
+                    <a
+                        href="https://besseressen-ka.de/mein-ginger/"
+                        target="_blank"
+                        class="btn btn-primary"
+                        aria-label="Mein Ginger jetzt im Online-Shop kaufen"
+                    >
+                        Jetzt kaufen
+                    </a>
+                    <a href="#about" class="btn btn-secondary" aria-label="Mehr über Mein Ginger erfahren"> Mehr erfahren </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="/images/meinginger-1x1.jpg" alt="Mein Ginger Original - Ingwer-Mehrfruchtsaft Flasche" />
+            </div>
+        </section>
+
+        {/* About Section */}
+        <section id="about" class="content-section about" aria-labelledby="about-heading">
+            <h2 id="about-heading">Was ist Mein Ginger?</h2>
+            <p>
+                Mein Ginger Original ist ein hausgemachter Mehrfruchtsaft aus feinen Zutaten, der die Kraft von viel frischem Ingwer vereint. Eine perfekte
+                Mischung aus Apfel, Orange, Ananas, Passionsfrucht, Mango und Banane – ein Genuss für Körper und Seele.
+            </p>
+            <div class="ingredients-highlight" role="region" aria-label="Hauptmerkmale von Mein Ginger">
+                <div class="ingredient-card">
+                    <h3>🍎 Natürliche Zutaten</h3>
+                    <p>
+                        Apfelsaft (66%), Ananas-, Orangen- und Passionsfruchtsaft, Mango- und Bananenmark mit 5% Ingwer – alles aus alternativem, nachhaltigem
+                        Anbau
+                    </p>
+                </div>
+                <div class="ingredient-card">
+                    <h3>⚡ Energie & Gesundheit</h3>
+                    <p>Die natürliche Kraft des Ingwers kombiniert mit wertvollen Früchten für deinen täglichen Boost</p>
+                </div>
+                <div class="ingredient-card">
+                    <h3>🌱 Nachhaltig</h3>
+                    <p>Alle Zutaten stammen aus alternativem, nachhaltigem Anbau – für deine Gesundheit und den Planeten</p>
+                </div>
+            </div>
+        </section>
+
+        {/* Ingredients Section */}
+        <section id="ingredients" class="content-section ingredients" aria-labelledby="ingredients-heading">
+            <h2 id="ingredients-heading">Zutaten von Mein Ginger</h2>
+            <p class="sr-only">Detaillierte Liste aller Zutaten im Mein Ginger Original Mehrfruchtsaft</p>
+            <div class="ingredients-list" role="list">
+                <div class="ingredient" role="listitem">
+                    <span class="ingredient-percent" aria-label="66 Prozent">66%</span>
+                    <h4>Apfelsaft</h4>
+                    <p>Die Basis unseres Mehrfruchtsafts</p>
+                </div>
+                <div class="ingredient" role="listitem">
+                    <span class="ingredient-icon" aria-hidden="true">🍊</span>
+                    <h4>Orangen-, Ananas- & Passionsfruchtsaft</h4>
+                    <p>Für exotisches Aroma und Frische</p>
+                </div>
+                <div class="ingredient" role="listitem">
+                    <span class="ingredient-icon" aria-hidden="true">🥭</span>
+                    <h4>Mango- und Bananenmark</h4>
+                    <p>Für cremige Textur und natürliche Süße</p>
+                </div>
+                <div class="ingredient" role="listitem">
+                    <span class="ingredient-percent" aria-label="5 Prozent">5%</span>
+                    <h4>Frischer Ingwer</h4>
+                    <p>Die Power-Zutat für den besonderen Kick</p>
+                </div>
+            </div>
+        </section>
+
+        {/* How to Use Section */}
+        <section class="content-section how-to-use" aria-labelledby="how-to-heading">
+            <h2 id="how-to-heading">So genießt du Mein Ginger</h2>
+            <p class="sr-only">Anleitung zur Zubereitung und zum Genuss von Mein Ginger</p>
+            <div class="preparation" role="doc-chapter" aria-label="Zubereitungsschritte">
+                <div class="step" role="doc-step">
+                    <div class="step-number" aria-label="Schritt 1">1</div>
+                    <h3>Mische 1 Teil Mein Ginger Saft</h3>
+                </div>
+                <div class="step" role="doc-step">
+                    <div class="step-number" aria-label="Schritt 2">2</div>
+                    <h3>Mit 2 Teilen heißem oder kaltem Wasser</h3>
+                </div>
+                <div class="step" role="doc-step">
+                    <div class="step-number" aria-label="Schritt 3">3</div>
+                    <h3>Umrühren und genießen!</h3>
+                </div>
+            </div>
+            <p class="tip">
+                💡 <strong>Tipp:</strong> Entdecke leckere Rezeptideen auf unserer Website oder im Rezeptflyer
+            </p>
+        </section>
+
+        {/* Product Variants Section */}
+        <section id="variants" class="content-section variants" aria-labelledby="variants-heading">
+            <h2 id="variants-heading">Alle Varianten von Mein Ginger</h2>
+            <p class="sr-only">Übersicht aller verfügbaren Mein Ginger Sorten und Varianten</p>
+            <div class="variants-grid" role="list">
+                <article class="variant-card" role="listitem">
+                    <img
+                        src="/images/meinginger-original-web.png"
+                        alt="Mein Ginger Original - Ingwer-Mehrfruchtsaft mit Apfel, Orange, Ananas, Passionsfrucht, Mango und Banane"
+                    />
+                    <h3>Mein Ginger Original</h3>
+                    <p>Der Klassiker mit viel frischem Ingwer und tropischen Früchten</p>
+                    <p class="price" aria-label="Preis 6,40 Euro für 0,5 Liter">6,40 € (0,5l)</p>
+                </article>
+                <article class="variant-card" role="listitem">
+                    <img src="/images/meinginger-beere-web.png" alt="Mein Ginger Beere - Ingwersaft mit Beeren-Geschmack und Passionsfrucht" />
+                    <h3>Mein Ginger Beere</h3>
+                    <p>Die fruchtige Variante mit Beeren-Note</p>
+                    <p class="price" aria-label="Preis 6,40 Euro für 0,5 Liter">6,40 € (0,5l)</p>
+                </article>
+                <article class="variant-card" role="listitem">
+                    <img src="/images/meinginger-sanddorn-web.png" alt="Mein Ginger Sanddorn - Ingwersaft mit kraftvollem Sanddorn" />
+                    <h3>Mein Ginger Sanddorn</h3>
+                    <p>Mit der kraftvollen Sanddorn-Komponente</p>
+                    <p class="price" aria-label="Preis 6,40 Euro für 0,5 Liter">6,40 € (0,5l)</p>
+                </article>
+                <article class="variant-card" role="listitem">
+                    <img src="/images/meinginger-spirit-web.png" alt="Mein Ginger Spirit - Fix und fertig gemischt zum direkt Trinken" />
+
+                    <h3>Mein Ginger Spirit</h3>
+                    <p>Die konzentrierte Kraft, fix und fertig gemischt zum direkt Trinken und geboostet werden!</p>
+                    <p class="price" aria-label="Preis 3,90 Euro für 0,3 Liter">3,90 € (0,3l)</p>
+                </article>
+            </div>
+        </section>
+
+        {/* CTA Section */}
+        <section class="content-section cta-section" aria-labelledby="cta-heading">
+            <h2 id="cta-heading">Bereit für dein Ginger-Abenteuer?</h2>
+            <p>Entdecke jetzt alle Varianten von Mein Ginger im Shop und finde deine Lieblings-Sorte</p>
+            <a
+                href="https://besseressen-ka.de/mein-ginger/"
+                target="_blank"
+                class="btn btn-primary btn-large"
+                aria-label="Zum Online-Shop von besseressen-ka.de - Mein Ginger kaufen"
+            >
+                Zum Shop
+            </a>
+        </section>
+
+        {/* Retailers Section */}
+        <section id="retailers" class="content-section retailers" aria-labelledby="retailers-heading">
+            <h2 id="retailers-heading">Wo findest du Mein Ginger?</h2>
+            <p>Mein Ginger ist bei ausgewählten Verkaufsstellen erhältlich. Besuche unsere Verkaufsstellenkarte, um einen Händler in deiner Nähe zu finden.</p>
+            <div class="retailers-grid" role="list">
+                <div class="retailer-card" role="listitem">
+                    <h3>🏪 Online Shop</h3>
+                    <p>Bestelle bequem von zuhause</p>
+                    <a href="https://besseressen-ka.de/mein-ginger/" target="_blank" aria-label="Zum Online-Shop - Mein Ginger kaufen"> Zum Shop </a>
+                </div>
+                <div class="retailer-card" role="listitem">
+                    <h3>🏢 Stammgeschäft</h3>
+                    <p>
+                        Kleine Feinschmeckerei<br />Amthausstraße 77<br />76227 Karlsruhe
+                    </p>
+                </div>
+                <div class="retailer-card" role="listitem">
+                    <h3>🗺️ Weitere Händler</h3>
+                    <p>Finde einen Händler in deiner Nähe auf unserer Verkaufsstellenkarte</p>
+                </div>
+            </div>
+        </section>
+    </main>
 </Layout>
+
+<style>
+    main {
+        overflow: hidden;
+    }
+
+    section {
+        padding: 4rem 2rem;
+        margin: 0 auto;
+        max-width: 1200px;
+        width: 100%;
+    }
+
+    h1,
+    h2,
+    h3 {
+        margin: 0 0 1rem 0;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        text-align: center;
+        color: var(--text-primary, #1a1a1a);
+        margin-bottom: 2rem;
+    }
+
+    p {
+        line-height: 1.6;
+        color: var(--text-secondary, #666);
+    }
+
+    /* Hero Section */
+    .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+        padding: 6rem 2rem;
+        background: linear-gradient(135deg, #faf8f3 0%, #f5f0e8 100%);
+        border-radius: 12px;
+        margin-bottom: 2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 4rem;
+        color: #d4af37;
+        margin-bottom: 0.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .tagline {
+        font-size: 1.8rem;
+        color: #c41e3a;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        color: #333;
+        margin-bottom: 2rem;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn {
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+    }
+
+    .btn-primary {
+        background-color: #d4af37;
+        color: white;
+        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+    }
+
+    .btn-primary:hover {
+        background-color: #c41e3a;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(196, 30, 58, 0.4);
+    }
+
+    .btn-secondary {
+        background-color: transparent;
+        color: #d4af37;
+        border-color: #d4af37;
+    }
+
+    .btn-secondary:hover {
+        background-color: #d4af37;
+        color: white;
+    }
+
+    .btn-large {
+        padding: 1.2rem 3rem;
+        font-size: 1.1rem;
+    }
+
+    .hero-image {
+        text-align: center;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+        height: auto;
+        filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
+    }
+
+    .ingredients-highlight {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .ingredient-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        text-align: left;
+    }
+
+    .ingredient-card h3 {
+        color: #d4af37;
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+    }
+
+    .ingredient-card p {
+        color: #666;
+        font-size: 0.95rem;
+    }
+
+    /* Ingredients Section */
+
+    .ingredients-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 2rem;
+    }
+
+    .ingredient {
+        padding: 1.5rem;
+        background: linear-gradient(135deg, #faf8f3 0%, #f5f0e8 100%);
+        border-left: 4px solid #d4af37;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .ingredient:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+    }
+
+    .ingredient-percent {
+        display: inline-block;
+        background-color: #d4af37;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 50%;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        min-width: 50px;
+        text-align: center;
+    }
+
+    .ingredient-icon {
+        display: block;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .ingredient h4 {
+        color: #333;
+        margin: 0.5rem 0;
+        font-size: 1.1rem;
+    }
+
+    .ingredient p {
+        color: #666;
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+    /* How to Use Section */
+    .how-to-use {
+        background: linear-gradient(135deg, #faf8f3 0%, #f5f0e8 100%);
+    }
+
+    .preparation {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    .step {
+        text-align: center;
+        padding: 2rem;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .step-number {
+        width: 60px;
+        height: 60px;
+        background-color: #d4af37;
+        color: white;
+        font-size: 1.8rem;
+        font-weight: bold;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+    }
+
+    .step h3 {
+        font-size: 1.1rem;
+        color: #333;
+        margin: 0;
+    }
+
+    .tip {
+        text-align: center;
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border-left: 4px solid #c41e3a;
+        margin-top: 2rem;
+    }
+
+    /* Variants Section */
+
+    .variants-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .variant-card {
+        background: #faf8f3;
+        padding: 2rem;
+        border-radius: 8px;
+        text-align: center;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .variant-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
+    }
+
+    .variant-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: contain;
+        margin-bottom: 1.5rem;
+    }
+
+    .variant-card h3 {
+        color: #333;
+        font-size: 1.3rem;
+        margin: 1rem 0;
+    }
+
+    .variant-card p {
+        color: #666;
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .price {
+        color: #d4af37;
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+
+    .variants-additional {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    /* CTA Section */
+    .cta-section {
+        background: linear-gradient(135deg, #d4af37 0%, #c41e3a 100%);
+        color: white;
+        text-align: center;
+    }
+
+    .cta-section h2 {
+        color: white;
+    }
+
+    .cta-section p {
+        color: white;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Retailers Section */
+    .retailers {
+        background-color: #faf8f3;
+    }
+
+    .retailers p {
+        text-align: center;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .retailers-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    .retailer-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .retailer-card h3 {
+        color: #d4af37;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .retailer-card p {
+        color: #666;
+        margin-bottom: 1rem;
+        line-height: 1.6;
+    }
+
+    .retailer-card a {
+        color: #d4af37;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+    .retailer-card a:hover {
+        color: #c41e3a;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        section {
+            padding: 2rem 1rem;
+        }
+
+        .hero {
+            grid-template-columns: 1fr;
+            padding: 3rem 1rem;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+        }
+
+        .tagline {
+            font-size: 1.4rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+        }
+
+        .cta-buttons {
+            flex-direction: column;
+        }
+
+        .btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        .preparation {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

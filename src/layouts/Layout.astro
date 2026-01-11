@@ -10,25 +10,89 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+const seoData = {
+    title: 'Mein Ginger - Ingwer-Mehrfruchtsaft online kaufen',
+    description:
+        'Hausgemachter Ingwer-Mehrfruchtsaft aus nachhaltigen Zutaten. Mein Ginger Original mit Apfel, Ananas, Orange, Passionsfrucht, Mango und Banane. Jetzt online bestellen!',
+    keywords: 'Ingwersaft, Mehrfruchtsaft, Mein Ginger, Bio-Saft, nachhaltiger Saft, Ingwer Drink, Gesundheitssaft',
+    ogImage: '/images/meinginger-original-web.png',
+    ogUrl: 'https://meinginger.de/mein-ginger',
+    canonical: 'https://meinginger.de/mein-ginger'
+};
+
+const schemaData = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Mein Ginger Original',
+    description: 'Hausgemachter Ingwer-Mehrfruchtsaft mit Apfel, Orange, Ananas, Passionsfrucht, Mango und Banane',
+    image: '/images/meinginger-original-web.png',
+    brand: {
+        '@type': 'Brand',
+        name: 'Mein Ginger'
+    },
+    offers: {
+        '@type': 'Offer',
+        url: 'https://besseressen-ka.de/mein-ginger/',
+        priceCurrency: 'EUR',
+        price: '6.40'
+    },
+    aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '5',
+        bestRating: '5',
+        worstRating: '1',
+        ratingCount: '100'
+    }
+};
+
+const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Mein Ginger',
+    url: 'https://meinginger.de',
+    logo: '/images/meinginger-1x1.jpg',
+    description: 'Hausgemachte Ingwer-Mehrfruchtsäfte aus nachhaltigen Zutaten',
+    address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Amthausstraße 77',
+        addressLocality: 'Karlsruhe',
+        postalCode: '76227',
+        addressCountry: 'DE'
+    }
+};
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="de">
     <head>
+        <meta name="description" content={seoData.description} />
+        <meta name="keywords" content={seoData.keywords} />
+        <meta property="og:title" content={seoData.title} />
+        <meta property="og:description" content={seoData.description} />
+        <meta property="og:image" content={seoData.ogImage} />
+        <meta property="og:url" content={seoData.ogUrl} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seoData.title} />
+        <meta name="twitter:description" content={seoData.description} />
+        <meta name="twitter:image" content={seoData.ogImage} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href={seoData.canonical} />
+        <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+        <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
         <meta charset="UTF-8" />
         <title>{title}</title>
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin />
     </head>
-    <body class="antialiased text-white bg-complementary">
-        <div class="flex flex-col min-h-screen px-6 bg-noise sm:px-12">
+    <body class="antialiased text-white bg-white">
+        <Header />
+        <div class="flex flex-col min-h-screen px-6 sm:px-12">
             <div class="flex flex-col w-full max-w-5xl mx-auto grow">
-                <Header />
                 <main class="grow"><slot /></main>
-                <Footer />
             </div>
+            <Footer />
         </div>
     </body>
 </html>

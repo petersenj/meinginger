@@ -1,19 +1,18 @@
+@import './fonts.css';
 @import 'tailwindcss';
 
 @theme {
-    --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --color-primary: #f67280;
-    --color-primary-content: #101828;
-    --color-complementary: #355c7d;
-    --background-image-noise: linear-gradient(
-            to bottom,
-            color-mix(in oklab, var(--color-gray-950) 0%, transparent),
-            color-mix(in oklab, var(--color-gray-950) 100%, transparent)
-        ),
-        url('/images/noise.png');
+    --font-sans: 'Asap', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-primary: #d4af37;
+    --color-primary-content: #ffffff;
+    --color-complementary: #c41e3a;
 }
 
 @layer base {
+    * {
+        scroll-behavior: smooth;
+        scroll-margin-top: 5rem;
+    }
     h1 {
         @apply text-4xl font-bold tracking-tight sm:text-5xl;
     }
@@ -37,22 +36,21 @@
 }
 
 @layer components {
-    .markdown {
-        > * {
-            @apply my-6;
-        }
+    .content-section {
+        border-radius: 12px;
+        margin-bottom: 5rem;
+        background-color: white;
+        text-align: center;
+        border-radius: 12px;
+        margin-bottom: 2rem;
+    }
 
-        :where(h1, h2) {
-            @apply mt-12 mb-6;
-        }
-
-        > :first-child {
-            @apply mt-0;
-        }
-
-        > :last-child {
-            @apply mb-0;
-        }
+    .content-section p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .btn {
