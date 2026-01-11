@@ -36,19 +36,19 @@ import Layout from '../layouts/Layout.astro';
             </p>
             <div class="ingredients-highlight" role="region" aria-label="Hauptmerkmale von Mein Ginger">
                 <div class="ingredient-card">
-                    <h3>🍎 Natürliche Zutaten</h3>
-                    <p>
-                        Apfelsaft (66%), Ananas-, Orangen- und Passionsfruchtsaft, Mango- und Bananenmark mit 5% Ingwer – alles aus alternativem, nachhaltigem
-                        Anbau
-                    </p>
+                    <h3>Natürliche Zutaten</h3>
+                    <p>Apfelsaft* (66%), Ananas-, Orangen- und Passionsfruchtsaft, Mango- und Bananenmark mit 5% Ingwer*</p>
                 </div>
                 <div class="ingredient-card">
-                    <h3>⚡ Energie & Gesundheit</h3>
+                    <h3>Energie & Gesundheit</h3>
                     <p>Die natürliche Kraft des Ingwers kombiniert mit wertvollen Früchten für deinen täglichen Boost</p>
                 </div>
                 <div class="ingredient-card">
-                    <h3>🌱 Nachhaltig</h3>
-                    <p>Alle Zutaten stammen aus alternativem, nachhaltigem Anbau – für deine Gesundheit und den Planeten</p>
+                    <h3>Nachhaltig</h3>
+                    <p>
+                        Einige Zutaten stammen aus alternativem, nachhaltigem Anbau. Außerdem bekommst du Mein Ginger ausschließlich in Pfandflaschen – weniger
+                        Müll für den Planeten
+                    </p>
                 </div>
             </div>
         </section>
@@ -59,8 +59,8 @@ import Layout from '../layouts/Layout.astro';
             <p class="sr-only">Detaillierte Liste aller Zutaten im Mein Ginger Original Mehrfruchtsaft</p>
             <div class="ingredients-list" role="list">
                 <div class="ingredient" role="listitem">
-                    <span class="ingredient-percent" aria-label="66 Prozent">66%</span>
-                    <h4>Apfelsaft</h4>
+                    <span class="ingredient-icon" aria-hidden="true">🍎</span>
+                    <h4>Apfelsaft*</h4>
                     <p>Die Basis unseres Mehrfruchtsafts</p>
                 </div>
                 <div class="ingredient" role="listitem">
@@ -75,7 +75,7 @@ import Layout from '../layouts/Layout.astro';
                 </div>
                 <div class="ingredient" role="listitem">
                     <span class="ingredient-percent" aria-label="5 Prozent">5%</span>
-                    <h4>Frischer Ingwer</h4>
+                    <h4>Frischer Ingwer*</h4>
                     <p>Die Power-Zutat für den besonderen Kick</p>
                 </div>
             </div>
@@ -100,7 +100,11 @@ import Layout from '../layouts/Layout.astro';
                 </div>
             </div>
             <p class="tip">
-                💡 <strong>Tipp:</strong> Entdecke leckere Rezeptideen auf unserer Website oder im Rezeptflyer
+                <strong>Tipp:</strong> Entdecke leckere Rezeptideen gleich hier oder im Rezeptflyer &nbsp;&nbsp; <a
+                    href="/rezepte"
+                    class="btn btn-primary btn-large"
+                    aria-label="Zu unseren Rezepteideen mit Mein Ginger">Rezeptideen</a
+                >
             </p>
         </section>
 
@@ -162,12 +166,19 @@ import Layout from '../layouts/Layout.astro';
                 <div class="retailer-card" role="listitem">
                     <h3>🏪 Online Shop</h3>
                     <p>Bestelle bequem von zuhause</p>
-                    <a href="https://besseressen-ka.de/mein-ginger/" target="_blank" aria-label="Zum Online-Shop - Mein Ginger kaufen"> Zum Shop </a>
+                    <a
+                        class="btn btn-secondary"
+                        href="https://besseressen-ka.de/mein-ginger/"
+                        target="_blank"
+                        aria-label="Zum Online-Shop - Mein Ginger kaufen"
+                    >
+                        Zum Shop
+                    </a>
                 </div>
                 <div class="retailer-card" role="listitem">
                     <h3>🏢 Stammgeschäft</h3>
                     <p>
-                        Kleine Feinschmeckerei<br />Amthausstraße 77<br />76227 Karlsruhe
+                        Kleine Feinschmeckerei<br />Amthausstraße 7<br />76227 Karlsruhe
                     </p>
                 </div>
                 <div class="retailer-card" role="listitem">
