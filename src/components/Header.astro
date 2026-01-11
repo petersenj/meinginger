@@ -11,7 +11,7 @@ const navItems = [
 ---
 
 <nav class="sticky-nav" aria-label="Hauptnavigation">
-    <div class="nav-container flex flex-wrap items-center justify-between px-3 sm:px-12 py-6">
+    <div class="nav-container flex flex-wrap items-center justify-between px-3 sm:px-12 py-6 max-w-5xl mx-auto">
         <a href="/" aria-label="Mein Ginger - Zur Startseite">
             <Logo />
         </a>
@@ -43,7 +43,7 @@ const navItems = [
     {
         !!navItems?.length && (
             <div class="mobile-menu" id="mobile-menu" role="region" aria-label="Mobile Navigation">
-                <ul class="mobile-nav-list" role="list">
+                <ul class="mobile-nav-list px-3 sm:px-12 max-w-5xl mx-auto" role="list">
                     {navItems.map((item) => (
                         <li role="listitem">
                             <a href={item.href} class="mobile-nav-link" aria-label={item.ariaLabel}>
@@ -107,6 +107,12 @@ const navItems = [
         z-index: 1001;
     }
 
+    @media screen and (min-width: 640px) {
+        .burger-menu-btn {
+            right: 3rem;
+        }
+    }
+
     .burger-line {
         width: 28px;
         height: 3px;
@@ -149,7 +155,7 @@ const navItems = [
 
     .mobile-nav-list {
         list-style: none;
-        padding: 2rem 1rem;
+        padding-top: 2rem;
         display: flex;
         flex-direction: column;
         gap: 0;
@@ -176,7 +182,7 @@ const navItems = [
     }
 
     /* Show burger menu on mobile */
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
         .nav-desktop {
             display: none;
         }
