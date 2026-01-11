@@ -1,7 +1,5 @@
 ---
 import '../../src/styles/globals.css';
-import '@fontsource-variable/inter/wght.css';
-import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
@@ -84,7 +82,7 @@ const organizationSchema = {
         <meta charset="UTF-8" />
         <title>{title}</title>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin />
+        <link rel="preload" as="font" type="font/woff2" href="/fonts/asap-v34-latin-regular.woff2" crossorigin />
     </head>
     <body class="antialiased text-white bg-white">
         <Header />
