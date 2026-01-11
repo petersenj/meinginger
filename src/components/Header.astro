@@ -10,21 +10,49 @@ const navItems = [
 ];
 ---
 
-<nav class="sticky-nav flex flex-wrap items-center gap-4 pb-2 px-6 sm:px-12" aria-label="Hauptnavigation">
-    <a href="/" aria-label="Mein Ginger - Zur Startseite">
-        <Logo />
-    </a>
+<nav class="sticky-nav" aria-label="Hauptnavigation">
+    <div class="nav-container flex flex-wrap items-center justify-between px-3 sm:px-12 py-6">
+        <a href="/" aria-label="Mein Ginger - Zur Startseite">
+            <Logo />
+        </a>
+
+        {/* Desktop Navigation */}
+        {
+            !!navItems?.length && (
+                <ul class="nav-desktop flex flex-wrap gap-x-4 gap-y-1" role="list">
+                    {navItems.map((item) => (
+                        <li role="listitem">
+                            <a href={item.href} class="inline-block px-1.5 py-1 sm:px-3 sm:py-2 nav-link" aria-label={item.ariaLabel}>
+                                {item.linkText}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            )
+        }
+
+        {/* Mobile Burger Button */}
+        <button class="burger-menu-btn" id="burger-btn" aria-label="Navigation öffnen" aria-expanded="false" aria-controls="mobile-menu">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+        </button>
+    </div>
+
+    {/* Mobile Navigation Menu */}
     {
         !!navItems?.length && (
-            <ul class="flex flex-wrap gap-x-4 gap-y-1" role="list">
-                {navItems.map((item) => (
-                    <li role="listitem">
-                        <a href={item.href} class="inline-block px-1.5 py-1 sm:px-3 sm:py-2 nav-link" aria-label={item.ariaLabel}>
-                            {item.linkText}
-                        </a>
-                    </li>
-                ))}
-            </ul>
+            <div class="mobile-menu" id="mobile-menu" role="region" aria-label="Mobile Navigation">
+                <ul class="mobile-nav-list" role="list">
+                    {navItems.map((item) => (
+                        <li role="listitem">
+                            <a href={item.href} class="mobile-nav-link" aria-label={item.ariaLabel}>
+                                {item.linkText}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         )
     }
 </nav>
@@ -33,14 +61,26 @@ const navItems = [
     @import 'tailwindcss';
 
     .sticky-nav {
-        @apply pt-6;
-
-        position: sticky;
+        position: fixed;
         top: 0;
         z-index: 1000;
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         transition: all 0.3s ease;
+        width: 100%;
+    }
+
+    .nav-container {
+        transition: padding 0.3s ease;
+    }
+
+    .sticky-nav.scrolled .nav-container {
+        @apply py-2;
+    }
+
+    /* Desktop Navigation */
+    .nav-desktop {
+        display: flex;
     }
 
     .nav-link {
@@ -48,14 +88,159 @@ const navItems = [
         transition: color 0.3s ease;
     }
 
-    .sticky-nav.scrolled {
-        @apply pt-2;
+    .nav-link:hover {
+        color: #d4af37;
+    }
+
+    /* Mobile Burger Menu */
+    .burger-menu-btn {
+        display: none;
+        flex-direction: column;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        gap: 0.4rem;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1001;
+    }
+
+    .burger-line {
+        width: 28px;
+        height: 3px;
+        background-color: black;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    .burger-menu-btn.active .burger-line:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    .burger-menu-btn.active .burger-line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu-btn.active .burger-line:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        z-index: 999;
+        overflow-y: auto;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .mobile-menu.active {
+        transform: translateX(0);
+    }
+
+    .mobile-nav-list {
+        list-style: none;
+        padding: 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-top: 3rem;
+    }
+
+    .mobile-nav-link {
+        display: block;
+        padding: 1.5rem;
+        color: black;
+        text-decoration: none;
+        transition:
+            background-color 0.3s ease,
+            color 0.3s ease;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 1.1rem;
+    }
+
+    .mobile-nav-link:hover,
+    .mobile-nav-link:focus {
+        background-color: #faf8f3;
+        color: #d4af37;
+        outline: none;
+    }
+
+    /* Show burger menu on mobile */
+    @media (max-width: 768px) {
+        .nav-desktop {
+            display: none;
+        }
+
+        .burger-menu-btn {
+            display: flex;
+        }
+
+        .mobile-menu {
+            display: block;
+        }
     }
 </style>
 
 <script>
+    const burgerBtn = document.getElementById('burger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
     const nav = document.querySelector('.sticky-nav');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
+    // Toggle menu
+    if (burgerBtn && mobileMenu) {
+        burgerBtn.addEventListener('click', () => {
+            const isActive = burgerBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            burgerBtn.setAttribute('aria-expanded', isActive);
+
+            // Lock/unlock body scroll
+            if (isActive) {
+                document.body.style.overflow = 'hidden';
+                // Focus first link when menu opens
+                const firstLink = mobileNavLinks[0];
+                if (firstLink) {
+                    setTimeout(() => firstLink.focus(), 100);
+                }
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close menu when a link is clicked
+        mobileNavLinks.forEach((link) => {
+            link.addEventListener('click', () => {
+                burgerBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                burgerBtn.setAttribute('aria-expanded', false);
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Close menu on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                burgerBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                burgerBtn.setAttribute('aria-expanded', false);
+                document.body.style.overflow = 'auto';
+                burgerBtn.focus();
+            }
+        });
+    }
+
+    // Scroll handler for sticky nav
     if (nav) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 0) {
