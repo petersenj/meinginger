@@ -101,6 +101,9 @@
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     }
 
+    .hero-index {
+        background-image: url('/images/hero-index.jpg');
+    }
 
     .cta-section {
         background: linear-gradient(135deg, #d4af37 0%, #c41e3a 100%);
