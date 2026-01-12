@@ -3,10 +3,9 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Rezepte - Mein Ginger Ingwer-Mehrfruchtsaft">
-    <main class="rezepte-landing" role="main" aria-label="Mein Ginger Rezepte">
-        {/* Hero Section */}
-        <section class="content-section hero-rezepte" aria-labelledby="hero-heading">
-            <div class="hero-content-rezepte">
+    <section class="content-section hero" aria-labelledby="hero-heading">
+        <div class="content-section__content">
+            <div class="hero-content">
                 <h1 id="hero-heading">Mein Ginger Rezepte</h1>
                 <p class="tagline" role="doc-subtitle">KREATIV GENIEßEN</p>
                 <p class="subtitle">
@@ -14,10 +13,11 @@ import Layout from '../layouts/Layout.astro';
                     Möglichkeiten. Experimentieren erlaubt 😉
                 </p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        {/* Standard Recipe Section */}
-        <section class="content-section recipes" aria-labelledby="recipes-heading">
+    <section class="content-section recipes" aria-labelledby="recipes-heading">
+        <div class="content-section__content">
             <h2 id="recipes-heading">Klassische Rezepte</h2>
             <p class="recipe-intro">Hier sind unsere liebsten Zubereitungsarten für Mein Ginger</p>
 
@@ -37,10 +37,8 @@ import Layout from '../layouts/Layout.astro';
                             <span class="ingredient-name">Mineralwasser</span>
                         </div>
                     </div>
-                    <p class="recipe-tip">💡 Tipp: Mit Eiswürfeln servieren für die perfekte Erfrischung</p>
+                    <p class="tip"><span><strong>Tipp:</strong> Mit Eiswürfeln servieren für die perfekte Erfrischung</span></p>
                 </article>
-
-                {/* Mein Ginger als Tee */}
                 <article class="recipe-card" role="listitem">
                     <div class="recipe-icon">☕</div>
                     <h3>Mein Ginger als Tee</h3>
@@ -55,7 +53,7 @@ import Layout from '../layouts/Layout.astro';
                             <span class="ingredient-name">heißes Wasser oder Kräutertee</span>
                         </div>
                     </div>
-                    <p class="recipe-tip">💡 Tipp: Mit Honig und Zitrone verfeinern</p>
+                    <p class="tip"><span><strong>Tipp:</strong> Mit Honig und Zitrone verfeinern</span></p>
                 </article>
 
                 {/* Mein Ginger White */}
@@ -73,7 +71,7 @@ import Layout from '../layouts/Layout.astro';
                             <span class="ingredient-name">warme oder kalte Milch oder Kefir</span>
                         </div>
                     </div>
-                    <p class="recipe-tip">💡 Tipp: Mit Vanille oder Kardamom verfeinern</p>
+                    <p class="tip"><span><strong>Tipp:</strong> Mit Vanille oder Kardamom verfeinern</span></p>
                 </article>
 
                 {/* Mein Ginger Dessertidee */}
@@ -99,7 +97,7 @@ import Layout from '../layouts/Layout.astro';
                             <span class="ingredient-name">Prosecco</span>
                         </div>
                     </div>
-                    <p class="recipe-tip">💡 Tipp: In einem schönen Glas schichtweise anrichten</p>
+                    <p class="tip"><span><strong>Tipp:</strong> In einem schönen Glas schichtweise anrichten</span></p>
                 </article>
 
                 {/* Mein Ginger Eis */}
@@ -117,10 +115,8 @@ import Layout from '../layouts/Layout.astro';
                             <span class="ingredient-name">Im Gefrierschrank aufbewahren, bis es durchgefroren ist</span>
                         </div>
                     </div>
-                    <p class="recipe-tip">💡 Tipp: Mit Stiel zum Daumenlutschen - perfekt im Sommer</p>
+                    <p class="tip"><span><strong>Tipp:</strong> Mit Stiel zum Daumenlutschen - perfekt im Sommer</span></p>
                 </article>
-
-                {/* Mit Mein Ginger verfeinert */}
                 <article class="recipe-card" role="listitem">
                     <div class="recipe-icon">🍜</div>
                     <h3>Mit Mein Ginger verfeinert</h3>
@@ -135,13 +131,15 @@ import Layout from '../layouts/Layout.astro';
                             <span class="ingredient-name">für asiatische Wok-Gerichte</span>
                         </div>
                     </div>
-                    <p class="recipe-tip">💡 Tipp: Mit Sojasauce und Ginger-Ingwer perfekt kombiniert</p>
+                    <p class="tip"><span><strong>Tipp:</strong> Mit Sojasauce und Ginger-Ingwer perfekt kombiniert</span></p>
                 </article>
             </div>
-        </section>
+        </div>
+    </section>
 
-        {/* Inspiration Section */}
-        <section class="content-section inspiration" aria-labelledby="inspiration-heading">
+    {/* Inspiration Section */}
+    <section class="content-section inspiration" aria-labelledby="inspiration-heading">
+        <div class="content-section__content">
             <h2 id="inspiration-heading">Deine Inspiration</h2>
             <p class="sr-only">Tipps für eigene kreative Rezepte mit Mein Ginger</p>
             <div class="inspiration-grid" role="list">
@@ -166,10 +164,12 @@ import Layout from '../layouts/Layout.astro';
                     <p>Kreiere spannende Salatdressings mit dem besonderen Ginger-Kick</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        {/* CTA Section */}
-        <section class="content-section cta-section" aria-labelledby="cta-heading">
+    {/* CTA Section */}
+    <section class="content-section cta-section" aria-labelledby="cta-heading">
+        <div class="content-section__content">
             <h2 id="cta-heading">Bereit zum Experimentieren?</h2>
             <p>Hol dir jetzt deine Mein Ginger und starte dein Rezept-Abenteuer</p>
             <a
@@ -180,248 +180,167 @@ import Layout from '../layouts/Layout.astro';
             >
                 Zum Shop
             </a>
-        </section>
-    </main>
-</Layout>
+        </div>
+    </section>
 
-<style>
-    /* Hero Section */
-    .hero-rezepte {
-        align-items: center;
-        padding: 6rem 2rem;
-        background: linear-gradient(135deg, #faf8f3 0%, #f5f0e8 100%);
-    }
-
-    .hero-content-rezepte h1 {
-        font-size: 4rem;
-        color: #d4af37;
-        margin-bottom: 0.5rem;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .tagline {
-        font-size: 1.8rem;
-        color: #c41e3a;
-        font-weight: bold;
-        margin-bottom: 1rem;
-    }
-
-    .subtitle {
-        font-size: 1.2rem;
-        color: #333;
-        line-height: 1.6;
-    }
-
-    .hero-image-rezepte {
-        text-align: center;
-    }
-
-    .hero-image-rezepte img {
-        max-width: 100%;
-        height: auto;
-        filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
-    }
-
-    /* Recipes Section */
-    .recipe-intro {
-        text-align: center;
-        font-size: 1.1rem;
-        color: #666;
-        margin-bottom: 3rem;
-    }
-
-    .recipes-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2rem;
-        margin-bottom: 3rem;
-    }
-
-    .recipe-card {
-        background: white;
-        padding: 2.5rem;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        border-top: 4px solid #d4af37;
-        transition:
-            transform 0.3s ease,
-            box-shadow 0.3s ease;
-    }
-
-    .recipe-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .recipe-icon {
-        font-size: 3rem;
-        display: block;
-        margin-bottom: 1rem;
-        text-align: center;
-    }
-
-    .recipe-card h3 {
-        color: #333;
-        font-size: 1.4rem;
-        margin-bottom: 0.5rem;
-        text-align: center;
-    }
-
-    .recipe-description {
-        color: #666;
-        text-align: center;
-        font-size: 0.95rem;
-        margin-bottom: 1.5rem;
-        font-style: italic;
-    }
-
-    .recipe-ingredients {
-        background: linear-gradient(135deg, #faf8f3 0%, #f5f0e8 100%);
-        padding: 1.5rem;
-        border-radius: 8px;
-        margin-bottom: 1.5rem;
-    }
-
-    .ingredient-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 1rem;
-        gap: 1rem;
-    }
-
-    .ingredient-item:last-child {
-        margin-bottom: 0;
-    }
-
-    .ingredient-label {
-        background-color: #d4af37;
-        color: white;
-        padding: 0.4rem 0.8rem;
-        border-radius: 4px;
-        font-weight: bold;
-        font-size: 0.85rem;
-        white-space: nowrap;
-        min-width: 50px;
-        text-align: center;
-        flex-shrink: 0;
-    }
-
-    .ingredient-name {
-        color: #333;
-        font-size: 0.95rem;
-        line-height: 1.4;
-        text-align: left;
-    }
-
-    .recipe-tip {
-        background-color: #fff9e6;
-        border-left: 3px solid #c41e3a;
-        padding: 1rem;
-        border-radius: 4px;
-        color: #333;
-        font-size: 0.9rem;
-        margin: 0;
-    }
-
-    /* Inspiration Section */
-    .inspiration {
-        background: linear-gradient(135deg, #faf8f3 0%, #f5f0e8 100%);
-    }
-
-    .inspiration-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-    }
-
-    .inspiration-card {
-        background: white;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        position: relative;
-    }
-
-    .inspiration-number {
-        width: 50px;
-        height: 50px;
-        background-color: #d4af37;
-        color: white;
-        font-size: 1.5rem;
-        font-weight: bold;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 1rem;
-    }
-
-    .inspiration-card h3 {
-        color: #333;
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .inspiration-card p {
-        color: #666;
-        font-size: 0.95rem;
-        margin: 0;
-    }
-
-    /* CTA Section */
-    .cta-section {
-        background: linear-gradient(135deg, #d4af37 0%, #c41e3a 100%);
-        color: white;
-        text-align: center;
-    }
-
-    .cta-section h2 {
-        color: white;
-    }
-
-    .cta-section p {
-        color: white;
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .hero-rezepte {
-            grid-template-columns: 1fr;
-            padding: 3rem 1rem;
+    <style>
+        /* Recipes Section */
+        .recipe-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
         }
 
-        .hero-content-rezepte h1 {
-            font-size: 2.5rem;
+        .recipes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
 
-        .tagline {
+        .recipe-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #d4af37;
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .recipe-icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .recipe-card h3 {
+            color: #333;
             font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
         }
 
-        h2 {
-            font-size: 1.8rem;
+        .recipe-description {
+            color: #666;
+            text-align: center;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
         }
 
-        .recipes-grid,
-        .inspiration-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .recipe-card,
-        .inspiration-card {
+        .recipe-ingredients {
+            background: linear-gradient(135deg, #faf8f3 0%, #f5f0e8 100%);
             padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
         }
 
         .ingredient-item {
-            flex-direction: column;
-            gap: 0.5rem;
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        .ingredient-item:last-child {
+            margin-bottom: 0;
         }
 
         .ingredient-label {
-            width: 100%;
+            background-color: #d4af37;
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            min-width: 50px;
+            text-align: center;
+            flex-shrink: 0;
         }
-    }
-</style>
+
+        .ingredient-name {
+            color: #333;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            text-align: left;
+        }
+
+        /* Inspiration Section */
+        .inspiration {
+            background: linear-gradient(135deg, #faf8f3 0%, #f5f0e8 100%);
+        }
+
+        .inspiration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .inspiration-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+        .inspiration-number {
+            width: 50px;
+            height: 50px;
+            background-color: #d4af37;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .inspiration-card h3 {
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .inspiration-card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 560px) {
+            .recipes-grid,
+            .inspiration-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .recipe-card,
+            .inspiration-card {
+                padding: 1.5rem;
+            }
+
+            .ingredient-item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .ingredient-label {
+                width: 100%;
+            }
+        }
+    </style>
+</Layout>

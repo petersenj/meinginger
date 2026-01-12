@@ -11,7 +11,7 @@ const navItems = [
 ---
 
 <nav class="sticky-nav" aria-label="Hauptnavigation">
-    <div class="nav-container flex flex-wrap items-center justify-between px-3 sm:px-12 py-6 max-w-5xl mx-auto">
+    <div class="nav-container j--max-content-width flex flex-wrap items-center justify-between px-3 sm:px-12 py-6">
         <a href="/" aria-label="Mein Ginger - Zur Startseite">
             <Logo />
         </a>
@@ -22,7 +22,7 @@ const navItems = [
                 <ul class="nav-desktop flex flex-wrap gap-x-4 gap-y-1" role="list">
                     {navItems.map((item) => (
                         <li role="listitem">
-                            <a href={item.href} class="inline-block px-1.5 py-1 sm:px-3 sm:py-2 nav-link" aria-label={item.ariaLabel}>
+                            <a href={item.href} class="inline-block px-1.5 py-1 sm:px-3 sm:py-2 btn btn-secondary" aria-label={item.ariaLabel}>
                                 {item.linkText}
                             </a>
                         </li>

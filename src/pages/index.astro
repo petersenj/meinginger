@@ -3,9 +3,8 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Mein Ginger - Der Ingwer-Mehrfruchtsaft mit Kick">
-    <main class="mein-ginger-landing" role="main" aria-label="Mein Ginger Produktseite">
-        {/* Hero Section */}
-        <section class="content-section hero" aria-labelledby="hero-heading">
+    <section class="content-section hero hero-index" aria-labelledby="hero-heading">
+        <div class="content-section__content">
             <div class="hero-content">
                 <h1 id="hero-heading">Mein Ginger</h1>
                 <p class="tagline" role="doc-subtitle">FEEL THE BOOST!</p>
@@ -22,13 +21,11 @@ import Layout from '../layouts/Layout.astro';
                     <a href="#about" class="btn btn-secondary" aria-label="Mehr über Mein Ginger erfahren"> Mehr erfahren </a>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="/images/meinginger-1x1.jpg" alt="Mein Ginger Original - Ingwer-Mehrfruchtsaft Flasche" />
-            </div>
-        </section>
+        </div>
+    </section>
 
-        {/* About Section */}
-        <section id="about" class="content-section about" aria-labelledby="about-heading">
+    <section id="about" class="content-section about" aria-labelledby="about-heading">
+        <div class="content-section__content">
             <h2 id="about-heading">Was ist Mein Ginger?</h2>
             <p>
                 Mein Ginger Original ist ein hausgemachter Mehrfruchtsaft aus feinen Zutaten, der die Kraft von viel frischem Ingwer vereint. Eine perfekte
@@ -51,10 +48,12 @@ import Layout from '../layouts/Layout.astro';
                     </p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        {/* Ingredients Section */}
-        <section id="ingredients" class="content-section ingredients" aria-labelledby="ingredients-heading">
+    {/* Ingredients Section */}
+    <section id="ingredients" class="content-section ingredients" aria-labelledby="ingredients-heading">
+        <div class="content-section__content">
             <h2 id="ingredients-heading">Zutaten von Mein Ginger</h2>
             <p class="sr-only">Detaillierte Liste aller Zutaten im Mein Ginger Original Mehrfruchtsaft</p>
             <div class="ingredients-list" role="list">
@@ -79,10 +78,12 @@ import Layout from '../layouts/Layout.astro';
                     <p>Die Power-Zutat für den besonderen Kick</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        {/* How to Use Section */}
-        <section class="content-section how-to-use" aria-labelledby="how-to-heading">
+    {/* How to Use Section */}
+    <section class="content-section how-to-use" aria-labelledby="how-to-heading">
+        <div class="content-section__content">
             <h2 id="how-to-heading">So genießt du Mein Ginger</h2>
             <p class="sr-only">Anleitung zur Zubereitung und zum Genuss von Mein Ginger</p>
             <div class="preparation" role="doc-chapter" aria-label="Zubereitungsschritte">
@@ -100,16 +101,15 @@ import Layout from '../layouts/Layout.astro';
                 </div>
             </div>
             <p class="tip">
-                <strong>Tipp:</strong> Entdecke leckere Rezeptideen gleich hier oder im Rezeptflyer &nbsp;&nbsp; <a
-                    href="/rezepte"
-                    class="btn btn-primary btn-large"
-                    aria-label="Zu unseren Rezepteideen mit Mein Ginger">Rezeptideen</a
-                >
+                <span><strong>Tipp:</strong> Entdecke leckere Rezeptideen gleich hier oder im Rezeptflyer</span>
+                <a href="/rezepte" class="btn btn-primary btn-large" aria-label="Zu unseren Rezepteideen mit Mein Ginger">Rezeptideen</a>
             </p>
-        </section>
+        </div>
+    </section>
 
-        {/* Product Variants Section */}
-        <section id="variants" class="content-section variants" aria-labelledby="variants-heading">
+    {/* Product Variants Section */}
+    <section id="variants" class="content-section variants" aria-labelledby="variants-heading">
+        <div class="content-section__content">
             <h2 id="variants-heading">Alle Varianten von Mein Ginger</h2>
             <p class="sr-only">Übersicht aller verfügbaren Mein Ginger Sorten und Varianten</p>
             <div class="variants-grid" role="list">
@@ -142,10 +142,12 @@ import Layout from '../layouts/Layout.astro';
                     <p class="price" aria-label="Preis 3,90 Euro für 0,3 Liter">3,90 € (0,3l)</p>
                 </article>
             </div>
-        </section>
+        </div>
+    </section>
 
-        {/* CTA Section */}
-        <section class="content-section cta-section" aria-labelledby="cta-heading">
+    {/* CTA Section */}
+    <section class="content-section cta-section" aria-labelledby="cta-heading">
+        <div class="content-section__content">
             <h2 id="cta-heading">Bereit für dein Ginger-Abenteuer?</h2>
             <p>Entdecke jetzt alle Varianten von Mein Ginger im Shop und finde deine Lieblings-Sorte</p>
             <a
@@ -156,10 +158,12 @@ import Layout from '../layouts/Layout.astro';
             >
                 Zum Shop
             </a>
-        </section>
+        </div>
+    </section>
 
-        {/* Retailers Section */}
-        <section id="retailers" class="content-section retailers" aria-labelledby="retailers-heading">
+    {/* Retailers Section */}
+    <section id="retailers" class="content-section retailers" aria-labelledby="retailers-heading">
+        <div class="content-section__content">
             <h2 id="retailers-heading">Wo findest du Mein Ginger?</h2>
             <p>Mein Ginger ist bei ausgewählten Verkaufsstellen erhältlich. Besuche unsere Verkaufsstellenkarte, um einen Händler in deiner Nähe zu finden.</p>
             <div class="retailers-grid" role="list">
@@ -186,56 +190,17 @@ import Layout from '../layouts/Layout.astro';
                     <p>Finde einen Händler in deiner Nähe auf unserer Verkaufsstellenkarte</p>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 </Layout>
 
 <style>
-    /* Hero Section */
-    .hero {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-        align-items: center;
-        padding: 6rem 2rem;
-        background: linear-gradient(135deg, #faf8f3 0%, #f5f0e8 100%);
-    }
-
-    .hero-content h1 {
-        font-size: 4rem;
-        color: #d4af37;
-        margin-bottom: 0.5rem;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .tagline {
-        font-size: 1.8rem;
-        color: #c41e3a;
-        font-weight: bold;
-        margin-bottom: 1rem;
-    }
-
-    .subtitle {
-        font-size: 1.2rem;
-        color: #333;
-    }
-
     .cta-buttons {
         display: flex;
         gap: 1rem;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-    }
-
-    .hero-image {
-        text-align: center;
-    }
-
-    .hero-image img {
-        max-width: 100%;
-        height: auto;
-        filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
     }
 
     .ingredients-highlight {
@@ -349,15 +314,6 @@ import Layout from '../layouts/Layout.astro';
         margin: 0;
     }
 
-    .tip {
-        text-align: center;
-        background: white;
-        padding: 1.5rem;
-        border-radius: 8px;
-        border-left: 4px solid #c41e3a;
-        margin-top: 2rem;
-    }
-
     /* Variants Section */
 
     .variants-grid {
@@ -407,24 +363,6 @@ import Layout from '../layouts/Layout.astro';
         gap: 2rem;
     }
 
-    /* CTA Section */
-    .cta-section {
-        background: linear-gradient(135deg, #d4af37 0%, #c41e3a 100%);
-        color: white;
-        text-align: center;
-    }
-
-    .cta-section h2 {
-        color: white;
-    }
-
-    .cta-section p {
-        color: white;
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
-    }
-
-    /* Retailers Section */
     .retailers {
         background-color: #faf8f3;
     }
@@ -464,40 +402,8 @@ import Layout from '../layouts/Layout.astro';
         line-height: 1.6;
     }
 
-    .retailer-card a {
-        color: #d4af37;
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.3s ease;
-    }
-
-    .retailer-card a:hover {
-        color: #c41e3a;
-    }
-
     /* Responsive Design */
     @media (max-width: 560px) {
-        section {
-            padding: 2rem 1rem;
-        }
-
-        .hero {
-            grid-template-columns: 1fr;
-            padding: 3rem 1rem;
-        }
-
-        .hero-content h1 {
-            font-size: 2.5rem;
-        }
-
-        .tagline {
-            font-size: 1.4rem;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-        }
-
         .cta-buttons {
             flex-direction: column;
         }
