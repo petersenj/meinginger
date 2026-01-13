@@ -3,13 +3,13 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Rezepte - Mein Ginger Ingwer-Mehrfruchtsaft">
-    <section class="content-section hero" aria-labelledby="hero-heading">
+    <section class="content-section hero hero-rezepte" aria-labelledby="hero-heading">
         <div class="content-section__content">
             <div class="hero-content">
                 <h1 id="hero-heading">Mein Ginger Rezepte</h1>
                 <p class="tagline" role="doc-subtitle">KREATIV GENIEßEN</p>
                 <p class="subtitle">
-                    Unser Mein Ginger, Mein Ginger Beere und Mein Ginger Sanddorn eignet sich hervorragend zum reinen Genuss. Er bietet aber auch viele weitere
+                    Unser Mein Ginger, Mein Ginger Beere und Mein Ginger Sanddorn eignen sich hervorragend zum reinen Genuss, bieten aber auch viele weitere
                     Möglichkeiten. Experimentieren erlaubt 😉
                 </p>
             </div>
@@ -22,7 +22,6 @@ import Layout from '../layouts/Layout.astro';
             <p class="recipe-intro">Hier sind unsere liebsten Zubereitungsarten für Mein Ginger</p>
 
             <div class="recipes-grid" role="list">
-                {/* Mein Ginger Standard */}
                 <article class="recipe-card" role="listitem">
                     <div class="recipe-icon">💧</div>
                     <h3>Mein Ginger Standard</h3>
@@ -39,6 +38,7 @@ import Layout from '../layouts/Layout.astro';
                     </div>
                     <p class="tip"><span><strong>Tipp:</strong> Mit Eiswürfeln servieren für die perfekte Erfrischung</span></p>
                 </article>
+
                 <article class="recipe-card" role="listitem">
                     <div class="recipe-icon">☕</div>
                     <h3>Mein Ginger als Tee</h3>
@@ -56,7 +56,6 @@ import Layout from '../layouts/Layout.astro';
                     <p class="tip"><span><strong>Tipp:</strong> Mit Honig und Zitrone verfeinern</span></p>
                 </article>
 
-                {/* Mein Ginger White */}
                 <article class="recipe-card" role="listitem">
                     <div class="recipe-icon">🥛</div>
                     <h3>Mein Ginger White</h3>
@@ -73,8 +72,15 @@ import Layout from '../layouts/Layout.astro';
                     </div>
                     <p class="tip"><span><strong>Tipp:</strong> Mit Vanille oder Kardamom verfeinern</span></p>
                 </article>
+            </div>
+        </div>
+    </section>
+    <section class="content-section recipes" aria-labelledby="recipes-heading">
+        <div class="content-section__content">
+            <h2 id="recipes-heading">Leckere Eis-Ideen für den Sommer und den Rest des Jahres</h2>
+            <p class="recipe-intro">Mit diesen Ideen für den erfrischenden Ingwer Kick, weil Eis geht immer!</p>
 
-                {/* Mein Ginger Dessertidee */}
+            <div class="recipes-grid" role="list">
                 <article class="recipe-card" role="listitem">
                     <div class="recipe-icon">🍨</div>
                     <h3>Mein Ginger Dessertidee</h3>
@@ -85,8 +91,8 @@ import Layout from '../layouts/Layout.astro';
                             <span class="ingredient-name">Mein Ginger</span>
                         </div>
                         <div class="ingredient-item">
-                            <span class="ingredient-label">2</span>
-                            <span class="ingredient-name">Kugeln exotisches Fruchteis oder Fruchtsorbet</span>
+                            <span class="ingredient-label">2 Kugeln</span>
+                            <span class="ingredient-name">exotisches Fruchteis oder Fruchtsorbet</span>
                         </div>
                         <div class="ingredient-item">
                             <span class="ingredient-label">1 Schuss</span>
@@ -100,23 +106,31 @@ import Layout from '../layouts/Layout.astro';
                     <p class="tip"><span><strong>Tipp:</strong> In einem schönen Glas schichtweise anrichten</span></p>
                 </article>
 
-                {/* Mein Ginger Eis */}
                 <article class="recipe-card" role="listitem">
                     <div class="recipe-icon">🍦</div>
                     <h3>Mein Ginger Eis</h3>
                     <p class="recipe-description">Selbstgemachtes Fruchteis mit dem besonderen Kick</p>
                     <div class="recipe-ingredients" role="region" aria-label="Zutaten und Anleitung für Mein Ginger Eis">
                         <div class="ingredient-item">
-                            <span class="ingredient-label">1</span>
+                            <span class="ingredient-label">1.</span>
                             <span class="ingredient-name">Mein Ginger pur in eine Eisform geben</span>
                         </div>
                         <div class="ingredient-item">
-                            <span class="ingredient-label">2</span>
+                            <span class="ingredient-label">2.</span>
                             <span class="ingredient-name">Im Gefrierschrank aufbewahren, bis es durchgefroren ist</span>
                         </div>
                     </div>
-                    <p class="tip"><span><strong>Tipp:</strong> Mit Stiel zum Daumenlutschen - perfekt im Sommer</span></p>
+                    <p class="tip"><span><strong>Tipp:</strong> Form mit Stiel nutzen - perfekt zum Mitnehmen im Sommer</span></p>
                 </article>
+            </div>
+        </div>
+    </section>
+    <section class="content-section recipes" aria-labelledby="recipes-heading">
+        <div class="content-section__content">
+            <h2 id="recipes-heading">Als Ergänzung für asiatische Gerichte</h2>
+            <p class="recipe-intro">Verleihe deinen asiatischen Gerichten das gewisse Extra mit Mein Ginger</p>
+
+            <div class="recipes-grid" role="list">
                 <article class="recipe-card" role="listitem">
                     <div class="recipe-icon">🍜</div>
                     <h3>Mit Mein Ginger verfeinert</h3>
@@ -131,17 +145,17 @@ import Layout from '../layouts/Layout.astro';
                             <span class="ingredient-name">für asiatische Wok-Gerichte</span>
                         </div>
                     </div>
-                    <p class="tip"><span><strong>Tipp:</strong> Mit Sojasauce und Ginger-Ingwer perfekt kombiniert</span></p>
+                    <p class="tip"><span><strong>Tipp:</strong> Sojasauce und Mein Ginger perfekt kombiniert</span></p>
                 </article>
             </div>
         </div>
     </section>
 
-    {/* Inspiration Section */}
     <section class="content-section inspiration" aria-labelledby="inspiration-heading">
         <div class="content-section__content">
             <h2 id="inspiration-heading">Deine Inspiration</h2>
-            <p class="sr-only">Tipps für eigene kreative Rezepte mit Mein Ginger</p>
+            <p>Werde selbst kreativ und probiere Mein Ginger in deiner eigenen Kreation</p>
+
             <div class="inspiration-grid" role="list">
                 <div class="inspiration-card" role="listitem">
                     <div class="inspiration-number">1</div>
@@ -173,7 +187,7 @@ import Layout from '../layouts/Layout.astro';
             <h2 id="cta-heading">Bereit zum Experimentieren?</h2>
             <p>Hol dir jetzt deine Mein Ginger und starte dein Rezept-Abenteuer</p>
             <a
-                href="https://besseressen-ka.de/mein-ginger/"
+                href="https://besseressen-ka.de/produkte/mein-ginger/"
                 target="_blank"
                 class="btn btn-primary btn-large"
                 aria-label="Zum Online-Shop von besseressen-ka.de - Mein Ginger kaufen"
@@ -282,7 +296,7 @@ import Layout from '../layouts/Layout.astro';
 
         .inspiration-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
 
