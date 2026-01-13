@@ -14,9 +14,12 @@ const seoData = {
     description:
         'Hausgemachter Ingwer-Mehrfruchtsaft aus nachhaltigen Zutaten. Mein Ginger Original mit Apfel, Ananas, Orange, Passionsfrucht, Mango und Banane. Jetzt online bestellen!',
     keywords: 'Ingwersaft, Mehrfruchtsaft, Mein Ginger, Bio-Saft, nachhaltiger Saft, Ingwer Drink, Gesundheitssaft',
-    ogImage: '/images/meinginger-original-web.png',
-    ogUrl: 'https://meinginger.de/mein-ginger',
-    canonical: 'https://meinginger.de/mein-ginger'
+    ogImage: '/images/hero-index.jpg',
+    ogImageWidth: '1200',
+    ogImageHeight: '630',
+    ogImageAlt: 'Mein Ginger Original - Ingwer-Mehrfruchtsaft',
+    ogUrl: 'https://meinginger.de',
+    canonical: 'https://meinginger.de'
 };
 
 const schemaData = {
@@ -24,24 +27,24 @@ const schemaData = {
     '@type': 'Product',
     name: 'Mein Ginger Original',
     description: 'Hausgemachter Ingwer-Mehrfruchtsaft mit Apfel, Orange, Ananas, Passionsfrucht, Mango und Banane',
-    image: '/images/meinginger-original-web.png',
+    image: '/images/hero-index.jpg',
     brand: {
         '@type': 'Brand',
         name: 'Mein Ginger'
     },
     offers: {
         '@type': 'Offer',
-        url: 'https://besseressen-ka.de/mein-ginger/',
+        url: 'https://besseressen-ka.de/produkte/mein-ginger/',
         priceCurrency: 'EUR',
         price: '6.40'
-    },
-    aggregateRating: {
+    }
+    /*aggregateRating: {
         '@type': 'AggregateRating',
         ratingValue: '5',
         bestRating: '5',
         worstRating: '1',
         ratingCount: '100'
-    }
+    }*/
 };
 
 const organizationSchema = {
@@ -49,11 +52,11 @@ const organizationSchema = {
     '@type': 'Organization',
     name: 'Mein Ginger',
     url: 'https://meinginger.de',
-    logo: '/images/meinginger-1x1.jpg',
+    logo: '/images/meinginger-web.jpg',
     description: 'Hausgemachte Ingwer-Mehrfruchtsäfte aus nachhaltigen Zutaten',
     address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Amthausstraße 77',
+        streetAddress: 'Amthausstraße 7',
         addressLocality: 'Karlsruhe',
         postalCode: '76227',
         addressCountry: 'DE'
@@ -69,12 +72,17 @@ const organizationSchema = {
         <meta property="og:title" content={seoData.title} />
         <meta property="og:description" content={seoData.description} />
         <meta property="og:image" content={seoData.ogImage} />
+        <meta property="og:image:width" content={seoData.ogImageWidth} />
+        <meta property="og:image:height" content={seoData.ogImageHeight} />
+        <meta property="og:image:alt" content={seoData.ogImageAlt} />
         <meta property="og:url" content={seoData.ogUrl} />
         <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Mein Ginger" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={seoData.title} />
         <meta name="twitter:description" content={seoData.description} />
         <meta name="twitter:image" content={seoData.ogImage} />
+        <meta name="twitter:image:alt" content={seoData.ogImageAlt} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href={seoData.canonical} />
         <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
