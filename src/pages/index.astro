@@ -11,10 +11,10 @@ import Layout from '../layouts/Layout.astro';
                 <p class="subtitle">Hausgemachter Ingwer-Mehrfruchtsaft, mit Wumms und kräftig im Geschmack</p>
                 <div class="cta-buttons" role="region" aria-label="Aktionsschaltflächen">
                     <a
-                        href="https://besseressen-ka.de/mein-ginger/"
+                        href="https://besseressen-ka.de/produkte/mein-ginger/"
                         target="_blank"
                         class="btn btn-primary"
-                        aria-label="Mein Ginger jetzt im Online-Shop kaufen"
+                        aria-label="Mein Ginger jetzt im besser essen Online-Shop kaufen"
                     >
                         Jetzt kaufen
                     </a>
@@ -28,12 +28,17 @@ import Layout from '../layouts/Layout.astro';
         <div class="content-section__content">
             <h2 id="about-heading">Was ist Mein Ginger?</h2>
             <p>
-                Mein Ginger Original ist ein hausgemachter Mehrfruchtsaft aus feinen Zutaten, der die Kraft von viel frischem Ingwer vereint. Eine perfekte
+                "Mein Ginger" ist ein hausgemachter Mehrfruchtsaft aus feinen Zutaten, der die Kraft von viel frischem Ingwer vereint. Im Original eine perfekte
                 Mischung aus Apfel, Orange, Ananas, Passionsfrucht, Mango und Banane – ein Genuss für Körper und Seele.
+            </p>
+            <p>
+                Neben der Original-Rezeptur bieten wir auch weitere leckere Varianten an, wie "Mein Ginger Beere" mit fruchtiger Beeren-Note und "Mein Ginger
+                Sanddorn" mit exotischer Sanddorn-Note. Wir empfehlen, den Saft im Verhältnis 1:2 mit heißem oder kaltem Wasser zu mischen, um das volle Aroma
+                zu genießen. Zum Direkttrinken haben wir "Mein Ginger Spirit", fix und fertig im besten Mischverhältnis.
             </p>
             <div class="ingredients-highlight" role="region" aria-label="Hauptmerkmale von Mein Ginger">
                 <div class="ingredient-card">
-                    <h3>Natürliche Zutaten</h3>
+                    <h3>Natürliche Zutaten von Mein Ginger "Original"</h3>
                     <p>Apfelsaft* (66%), Ananas-, Orangen- und Passionsfruchtsaft, Mango- und Bananenmark mit 5% Ingwer*</p>
                 </div>
                 <div class="ingredient-card">
@@ -54,7 +59,8 @@ import Layout from '../layouts/Layout.astro';
     {/* Ingredients Section */}
     <section id="ingredients" class="content-section ingredients" aria-labelledby="ingredients-heading">
         <div class="content-section__content">
-            <h2 id="ingredients-heading">Zutaten von Mein Ginger</h2>
+            <h2 id="ingredients-heading">Zutaten von Mein Ginger Original</h2>
+            <p>100% natürliche Zutaten für das unverfälschte Geschmackserlebnis</p>
             <p class="sr-only">Detaillierte Liste aller Zutaten im Mein Ginger Original Mehrfruchtsaft</p>
             <div class="ingredients-list" role="list">
                 <div class="ingredient" role="listitem">
@@ -78,10 +84,10 @@ import Layout from '../layouts/Layout.astro';
                     <p>Die Power-Zutat für den besonderen Kick</p>
                 </div>
             </div>
+            <p class="mt-8">Die Zutaten unserer anderen Varianten findest du weiter unten und im Shop.</p>
         </div>
     </section>
 
-    {/* How to Use Section */}
     <section class="content-section how-to-use" aria-labelledby="how-to-heading">
         <div class="content-section__content">
             <h2 id="how-to-heading">So genießt du Mein Ginger</h2>
@@ -102,7 +108,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
             <p class="tip">
                 <span><strong>Tipp:</strong> Entdecke leckere Rezeptideen gleich hier oder im Rezeptflyer</span>
-                <a href="/rezepte" class="btn btn-primary btn-large" aria-label="Zu unseren Rezepteideen mit Mein Ginger">Rezeptideen</a>
+                <a href="/rezepte" class="btn btn-primary" aria-label="Zu unseren Rezepteideen mit Mein Ginger">Rezeptideen</a>
             </p>
         </div>
     </section>
@@ -121,25 +127,57 @@ import Layout from '../layouts/Layout.astro';
                     <h3>Mein Ginger Original</h3>
                     <p>Der Klassiker mit viel frischem Ingwer und tropischen Früchten</p>
                     <p class="price" aria-label="Preis 6,40 Euro für 0,5 Liter">6,40 € (0,5l)</p>
+                    <a
+                        href="https://besseressen-ka.de/shop/mein-ginger/mein-ginger-original/"
+                        target="_blank"
+                        class="btn btn-primary btn-mg-original"
+                        aria-label="Zu den Produktdetails von Mein Ginger Original in unserem besseressen-ka.de Online-Shop"
+                    >
+                        Produktdetails
+                    </a>
                 </article>
                 <article class="variant-card" role="listitem">
                     <img src="/images/meinginger-beere-web.png" alt="Mein Ginger Beere - Ingwersaft mit Beeren-Geschmack und Passionsfrucht" />
                     <h3>Mein Ginger Beere</h3>
                     <p>Die fruchtige Variante mit Beeren-Note</p>
                     <p class="price" aria-label="Preis 6,40 Euro für 0,5 Liter">6,40 € (0,5l)</p>
+                    <a
+                        href="https://besseressen-ka.de/shop/mein-ginger/mein-ginger-beere/"
+                        target="_blank"
+                        class="btn btn-primary btn-mg-beere"
+                        aria-label="Zu den Produktdetails von Mein Ginger Beere in unserem besseressen-ka.de Online-Shop"
+                    >
+                        Produktdetails
+                    </a>
                 </article>
                 <article class="variant-card" role="listitem">
                     <img src="/images/meinginger-sanddorn-web.png" alt="Mein Ginger Sanddorn - Ingwersaft mit kraftvollem Sanddorn" />
                     <h3>Mein Ginger Sanddorn</h3>
                     <p>Mit der kraftvollen Sanddorn-Komponente</p>
                     <p class="price" aria-label="Preis 6,40 Euro für 0,5 Liter">6,40 € (0,5l)</p>
+                    <a
+                        href="https://besseressen-ka.de/shop/mein-ginger/mein-ginger-sanddorn/"
+                        target="_blank"
+                        class="btn btn-primary btn-mg-sanddorn"
+                        aria-label="Zu den Produktdetails von Mein Ginger Sanddorn in unserem besseressen-ka.de Online-Shop"
+                    >
+                        Produktdetails
+                    </a>
                 </article>
                 <article class="variant-card" role="listitem">
                     <img src="/images/meinginger-spirit-web.png" alt="Mein Ginger Spirit - Fix und fertig gemischt zum direkt Trinken" />
 
                     <h3>Mein Ginger Spirit</h3>
                     <p>Die konzentrierte Kraft, fix und fertig gemischt zum direkt Trinken und geboostet werden!</p>
-                    <p class="price" aria-label="Preis 3,90 Euro für 0,3 Liter">3,90 € (0,3l)</p>
+                    <p class="price" aria-label="Preis 4,40 Euro für 0,3 Liter">4,40 € (0,3l)</p>
+                    <a
+                        href="https://besseressen-ka.de/shop/mein-ginger/mein-ginger-spirit/"
+                        target="_blank"
+                        class="btn btn-primary btn-mg-spirit"
+                        aria-label="Zu den Produktdetails von Mein Ginger Spirit in unserem besseressen-ka.de Online-Shop"
+                    >
+                        Produktdetails
+                    </a>
                 </article>
             </div>
         </div>
@@ -151,7 +189,7 @@ import Layout from '../layouts/Layout.astro';
             <h2 id="cta-heading">Bereit für dein Ginger-Abenteuer?</h2>
             <p>Entdecke jetzt alle Varianten von Mein Ginger im Shop und finde deine Lieblings-Sorte</p>
             <a
-                href="https://besseressen-ka.de/mein-ginger/"
+                href="https://besseressen-ka.de/produkte/mein-ginger/"
                 target="_blank"
                 class="btn btn-primary btn-large"
                 aria-label="Zum Online-Shop von besseressen-ka.de - Mein Ginger kaufen"
@@ -172,7 +210,7 @@ import Layout from '../layouts/Layout.astro';
                     <p>Bestelle bequem von zuhause</p>
                     <a
                         class="btn btn-secondary"
-                        href="https://besseressen-ka.de/mein-ginger/"
+                        href="https://besseressen-ka.de/produkte/mein-ginger/"
                         target="_blank"
                         aria-label="Zum Online-Shop - Mein Ginger kaufen"
                     >
