@@ -145,12 +145,16 @@
 
     .btn,
     .ingredient,
+    .recipe-card,
+    .inspiration-card,
     .step {
         transition: all 0.3s ease;
     }
 
     .btn:hover,
     .ingredient:hover,
+    .recipe-card:hover,
+    .inspiration-card:hover,
     .step:hover {
         transform: translateY(-4px);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
