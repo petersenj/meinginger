@@ -3,7 +3,8 @@
 
 @theme {
     --font-sans: 'Asap', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --color-primary: #ff9400;
+    --color-primary: #d67d00; /*#eb8900*/
+    --color-primary-punch: #eb8900;
     --color-primary-content: #ffffff;
     --color-complementary: #910054;
     --color-mg-original: #ff9400;
