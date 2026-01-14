@@ -1,0 +1,43 @@
+---
+interface Props {
+    number: number;
+    title: string;
+    ariaLabel?: string;
+}
+
+const { number, title, ariaLabel = `Schritt ${number}` } = Astro.props;
+---
+
+<div class="step animate-on-hover" role="step">
+    <div class="step-number" aria-label={ariaLabel}>{number}</div>
+    <h3>{title}</h3>
+</div>
+<style>
+    .step {
+        text-align: center;
+        padding: 2rem;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .step-number {
+        width: 60px;
+        height: 60px;
+        background-color: var(--color-primary);
+        color: white;
+        font-size: 1.8rem;
+        font-weight: bold;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+    }
+
+    .step h3 {
+        font-size: 1.1rem;
+        color: #333;
+        margin: 0;
+    }
+</style>

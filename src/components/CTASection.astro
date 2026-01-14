@@ -1,0 +1,31 @@
+---
+import Button from './Button.astro';
+
+const { headline, text, cta } = Astro.props;
+---
+
+<section class="content-section cta-section" aria-labelledby="cta-heading">
+    <div class="content-section__content">
+        <h2 id="cta-heading">{headline}</h2>
+        <p>{text}</p>
+        {
+            cta && (
+                <Button href={cta.href} ariaLabel={cta.ariaLabel} size={cta.size} type={cta.type}>
+                    {' '}
+                    {cta.text}{' '}
+                </Button>
+            )
+        }
+    </div>
+</section>
+
+<style>
+    .cta-section {
+        background: linear-gradient(135deg, var(--color-mg-original) 0%, var(--color-mg-beere) 100%);
+        text-align: center;
+    }
+
+    .cta-section p {
+        font-size: 1.1rem;
+    }
+</style>

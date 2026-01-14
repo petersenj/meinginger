@@ -1,28 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import IngredientCard from '../components/IngredientCard.astro';
+import IngredientItem from '../components/IngredientItem.astro';
+import StepCard from '../components/StepCard.astro';
+import RetailerCard from '../components/RetailerCard.astro';
+import Button from '../components/Button.astro';
+import Tip from '../components/Tip.astro';
+import CTASection from '../components/CTASection.astro';
+import Hero from '../components/Hero.astro';
 ---
 
 <Layout title="Mein Ginger - Der Ingwer-Mehrfruchtsaft mit Kick">
-    <section class="content-section hero hero-index" aria-labelledby="hero-heading">
-        <div class="content-section__content">
-            <div class="hero-content">
-                <h1 id="hero-heading">Mein Ginger</h1>
-                <p class="tagline" role="doc-subtitle">FEEL THE BOOST!</p>
-                <p class="subtitle">Hausgemachter Ingwer-Mehrfruchtsaft, mit Wumms und kräftig im Geschmack</p>
-                <div class="cta-buttons" role="region" aria-label="Aktionsschaltflächen">
-                    <a
-                        href="https://besseressen-ka.de/produkte/mein-ginger/"
-                        target="_blank"
-                        class="btn btn-primary"
-                        aria-label="Mein Ginger jetzt im besser essen Online-Shop kaufen"
-                    >
-                        Jetzt kaufen
-                    </a>
-                    <a href="#about" class="btn btn-secondary" aria-label="Mehr über Mein Ginger erfahren"> Mehr erfahren </a>
-                </div>
-            </div>
+    <Hero page="index" headline="Mein Ginger" tagline="FEEL THE BOOST!" subtitle="Hausgemachter Ingwer-Mehrfruchtsaft, mit Wumms und kräftig im Geschmack">
+        <div class="cta-buttons" role="region" aria-label="Aktionsschaltflächen">
+            <Button href="https://besseressen-ka.de/produkte/mein-ginger/" ariaLabel="Mein Ginger jetzt im besser essen Online-Shop kaufen" type="external">
+                Jetzt kaufen
+            </Button>
+            <Button href="#about" ariaLabel="Mehr über Mein Ginger erfahren" variant="secondary"> Mehr erfahren </Button>
         </div>
-    </section>
+    </Hero>
 
     <section id="about" class="content-section about" aria-labelledby="about-heading">
         <div class="content-section__content">
@@ -36,22 +33,19 @@ import Layout from '../layouts/Layout.astro';
                 Sanddorn" mit exotischer Sanddorn-Note. Wir empfehlen, den Saft im Verhältnis 1:2 mit heißem oder kaltem Wasser zu mischen, um das volle Aroma
                 zu genießen. Zum Direkttrinken haben wir "Mein Ginger Spirit", fix und fertig im besten Mischverhältnis.
             </p>
-            <div class="ingredients-highlight" role="region" aria-label="Hauptmerkmale von Mein Ginger">
-                <div class="ingredient-card">
-                    <h3>Natürliche Zutaten von Mein Ginger "Original"</h3>
-                    <p>Apfelsaft* (66%), Ananas-, Orangen- und Passionsfruchtsaft, Mango- und Bananenmark mit 5% Ingwer*</p>
-                </div>
-                <div class="ingredient-card">
-                    <h3>Energie & Gesundheit</h3>
-                    <p>Die natürliche Kraft des Ingwers kombiniert mit wertvollen Früchten für deinen täglichen Boost</p>
-                </div>
-                <div class="ingredient-card">
-                    <h3>Nachhaltig</h3>
-                    <p>
-                        Einige Zutaten stammen aus alternativem, nachhaltigem Anbau. Außerdem bekommst du Mein Ginger ausschließlich in Pfandflaschen – weniger
-                        Müll für den Planeten
-                    </p>
-                </div>
+            <div class="ingredients-highlight mobile-scroll-slider" role="region" aria-label="Hauptmerkmale von Mein Ginger">
+                <IngredientCard
+                    title={'Natürliche Zutaten von Mein Ginger "Original"'}
+                    description="Apfelsaft* (66%), Ananas-, Orangen- und Passionsfruchtsaft, Mango- und Bananenmark mit 5% Ingwer*"
+                />
+                <IngredientCard
+                    title="Energie & Gesundheit"
+                    description="Die natürliche Kraft des Ingwers kombiniert mit wertvollen Früchten für deinen täglichen Boost"
+                />
+                <IngredientCard
+                    title="Nachhaltig"
+                    description="Einige Zutaten stammen aus alternativem, nachhaltigem Anbau. Außerdem bekommst du Mein Ginger ausschließlich in Pfandflaschen – weniger Müll für den Planeten"
+                />
             </div>
         </div>
     </section>
@@ -59,32 +53,26 @@ import Layout from '../layouts/Layout.astro';
     {/* Ingredients Section */}
     <section id="ingredients" class="content-section ingredients" aria-labelledby="ingredients-heading">
         <div class="content-section__content">
-            <h2 id="ingredients-heading">Zutaten von Mein Ginger Original</h2>
-            <p>100% natürliche Zutaten für das unverfälschte Geschmackserlebnis</p>
-            <p class="sr-only">Detaillierte Liste aller Zutaten im Mein Ginger Original Mehrfruchtsaft</p>
-            <div class="ingredients-list" role="list">
-                <div class="ingredient" role="listitem">
-                    <span class="ingredient-icon" aria-hidden="true">🍎</span>
-                    <h4>Apfelsaft*</h4>
-                    <p>Die Basis unseres Mehrfruchtsafts</p>
-                </div>
-                <div class="ingredient" role="listitem">
-                    <span class="ingredient-icon" aria-hidden="true">🍊</span>
-                    <h4>Orangen-, Ananas- & Passionsfruchtsaft</h4>
-                    <p>Für exotisches Aroma und Frische</p>
-                </div>
-                <div class="ingredient" role="listitem">
-                    <span class="ingredient-icon" aria-hidden="true">🥭</span>
-                    <h4>Mango- und Bananenmark</h4>
-                    <p>Für cremige Textur und natürliche Süße</p>
-                </div>
-                <div class="ingredient" role="listitem">
-                    <span class="ingredient-percent" aria-label="5 Prozent">5%</span>
-                    <h4>Frischer Ingwer*</h4>
-                    <p>Die Power-Zutat für den besonderen Kick</p>
-                </div>
+            <h2 id="ingredients-heading">Zutaten von Mein Ginger</h2>
+            <p>70+% Bio und 100% natürliche Zutaten für das unverfälschte Geschmackserlebnis</p>
+            <p class="sr-only">Liste mit den wichtigsten Zutaten im Mein Ginger Ingwer-Mehrfruchtsaft</p>
+
+            <IngredientItem
+                classList={['highlight']}
+                label="5%"
+                title="Frisch geraspelter Bio-Ingwer* **"
+                description="Die Power-Zutat für den besonderen Kick"
+            />
+            <div class="ingredients-list mobile-scroll-slider" role="list">
+                <IngredientItem icon="🍎" title="Bio-Apfelsaft*" description="Beste Saftqualität ist die Basis unseres Mehrfruchtsafts" />
+                <IngredientItem icon="🍊🍍" title="Orangen-, Ananas- & Passionsfruchtsaft" description="Für exotisches Aroma und Frische" />
+                <IngredientItem icon="🥭🍌" title="Mango- und Bananenmark**" description="Für cremige Textur und natürliche Süße" />
+                <IngredientItem icon="🌺🫐" title="Sanddorn bzw. versch. Beeren und Blüten" description="in unseren anderen Varianten." />
             </div>
-            <p class="mt-8">Die Zutaten unserer anderen Varianten findest du weiter unten und im Shop.</p>
+            <small class="block mt-8">
+                ** Nach langer Standzeit kann sich Ingwer und Fruchtmark am Flaschenboden absetzen. Vor dem weiteren Verbrauch kurz schütteln!
+            </small>
+            <p class="mt-2">Die genauen Zutaten all unserer Varianten findest du weiter unten und im Shop.</p>
         </div>
     </section>
 
@@ -92,24 +80,14 @@ import Layout from '../layouts/Layout.astro';
         <div class="content-section__content">
             <h2 id="how-to-heading">So genießt du Mein Ginger</h2>
             <p class="sr-only">Anleitung zur Zubereitung und zum Genuss von Mein Ginger</p>
-            <div class="preparation" role="doc-chapter" aria-label="Zubereitungsschritte">
-                <div class="step" role="doc-step">
-                    <div class="step-number" aria-label="Schritt 1">1</div>
-                    <h3>Mische 1 Teil Mein Ginger Saft</h3>
-                </div>
-                <div class="step" role="doc-step">
-                    <div class="step-number" aria-label="Schritt 2">2</div>
-                    <h3>Mit 2 Teilen heißem oder kaltem Wasser</h3>
-                </div>
-                <div class="step" role="doc-step">
-                    <div class="step-number" aria-label="Schritt 3">3</div>
-                    <h3>Umrühren und genießen!</h3>
-                </div>
+            <div class="preparation mobile-scroll-slider" role="doc-chapter" aria-label="Zubereitungsschritte">
+                <StepCard number={1} title="Mische 1 Teil Mein Ginger Saft" />
+                <StepCard number={2} title="Mit 2 Teilen heißem oder kaltem Wasser" />
+                <StepCard number={3} title="Umrühren und genießen!" />
             </div>
-            <p class="tip">
-                <span><strong>Tipp:</strong> Entdecke leckere Rezeptideen gleich hier oder im Rezeptflyer</span>
-                <a href="/rezepte" class="btn btn-primary" aria-label="Zu unseren Rezepteideen mit Mein Ginger">Rezeptideen</a>
-            </p>
+            <Tip text="Entdecke leckere Rezeptideen gleich hier oder im Rezeptflyer">
+                <Button href="/rezepte" ariaLabel="Zu unseren Rezepteideen mit Mein Ginger">Rezeptideen</Button>
+            </Tip>
         </div>
     </section>
 
@@ -118,115 +96,88 @@ import Layout from '../layouts/Layout.astro';
         <div class="content-section__content">
             <h2 id="variants-heading">Alle Varianten von Mein Ginger</h2>
             <p class="sr-only">Übersicht aller verfügbaren Mein Ginger Sorten und Varianten</p>
-            <div class="variants-grid" role="list">
-                <article class="variant-card" role="listitem">
-                    <img
-                        src="/images/meinginger-original-web.png"
-                        alt="Mein Ginger Original - Ingwer-Mehrfruchtsaft mit Apfel, Orange, Ananas, Passionsfrucht, Mango und Banane"
-                    />
-                    <h3>Mein Ginger Original</h3>
-                    <p>Der Klassiker mit viel frischem Ingwer und tropischen Früchten</p>
-                    <p class="price" aria-label="Preis 6,40 Euro für 0,5 Liter">6,40 € (0,5l)</p>
-                    <a
-                        href="https://besseressen-ka.de/shop/mein-ginger/mein-ginger-original/"
-                        target="_blank"
-                        class="btn btn-primary btn-mg-original"
-                        aria-label="Zu den Produktdetails von Mein Ginger Original in unserem besseressen-ka.de Online-Shop"
-                    >
-                        Produktdetails
-                    </a>
-                </article>
-                <article class="variant-card" role="listitem">
-                    <img src="/images/meinginger-beere-web.png" alt="Mein Ginger Beere - Ingwersaft mit Beeren-Geschmack und Passionsfrucht" />
-                    <h3>Mein Ginger Beere</h3>
-                    <p>Die fruchtige Variante mit Beeren-Note</p>
-                    <p class="price" aria-label="Preis 6,40 Euro für 0,5 Liter">6,40 € (0,5l)</p>
-                    <a
-                        href="https://besseressen-ka.de/shop/mein-ginger/mein-ginger-beere/"
-                        target="_blank"
-                        class="btn btn-primary btn-mg-beere"
-                        aria-label="Zu den Produktdetails von Mein Ginger Beere in unserem besseressen-ka.de Online-Shop"
-                    >
-                        Produktdetails
-                    </a>
-                </article>
-                <article class="variant-card" role="listitem">
-                    <img src="/images/meinginger-sanddorn-web.png" alt="Mein Ginger Sanddorn - Ingwersaft mit kraftvollem Sanddorn" />
-                    <h3>Mein Ginger Sanddorn</h3>
-                    <p>Mit der kraftvollen Sanddorn-Komponente</p>
-                    <p class="price" aria-label="Preis 6,40 Euro für 0,5 Liter">6,40 € (0,5l)</p>
-                    <a
-                        href="https://besseressen-ka.de/shop/mein-ginger/mein-ginger-sanddorn/"
-                        target="_blank"
-                        class="btn btn-primary btn-mg-sanddorn"
-                        aria-label="Zu den Produktdetails von Mein Ginger Sanddorn in unserem besseressen-ka.de Online-Shop"
-                    >
-                        Produktdetails
-                    </a>
-                </article>
-                <article class="variant-card" role="listitem">
-                    <img src="/images/meinginger-spirit-web.png" alt="Mein Ginger Spirit - Fix und fertig gemischt zum direkt Trinken" />
-
-                    <h3>Mein Ginger Spirit</h3>
-                    <p>Die konzentrierte Kraft, fix und fertig gemischt zum direkt Trinken und geboostet werden!</p>
-                    <p class="price" aria-label="Preis 4,40 Euro für 0,3 Liter">4,40 € (0,3l)</p>
-                    <a
-                        href="https://besseressen-ka.de/shop/mein-ginger/mein-ginger-spirit/"
-                        target="_blank"
-                        class="btn btn-primary btn-mg-spirit"
-                        aria-label="Zu den Produktdetails von Mein Ginger Spirit in unserem besseressen-ka.de Online-Shop"
-                    >
-                        Produktdetails
-                    </a>
-                </article>
+            <div class="variants-grid mobile-scroll-slider" role="list">
+                <ProductCard
+                    image="/images/meinginger-original-web.png"
+                    imageAlt="Mein Ginger Original - Ingwer-Mehrfruchtsaft mit Apfel, frischem Ingwer, Orange, Ananas, Passionsfrucht, Mango und Banane"
+                    title="Mein Ginger Original"
+                    description="Der Klassiker mit viel frischem Ingwer und tropischen Früchten"
+                    price="6,40 € (0,5l)"
+                    priceLabel="Preis 6,40 Euro für 0,5 Liter"
+                    buttonUrl="https://besseressen-ka.de/shop/mein-ginger/mein-ginger-original/"
+                    buttonAriaLabel="Zu den Produktdetails von Mein Ginger Original in unserem besser essen Online-Shop"
+                    buttonVariant="mg-original"
+                />
+                <ProductCard
+                    image="/images/meinginger-beere-web.png"
+                    imageAlt="Mein Ginger Beere - Ingwersaft mit verschiedenen Beeren und Passionsfrucht"
+                    title="Mein Ginger Beere"
+                    description="Die fruchtige Variante mit Beeren-Note"
+                    price="6,40 € (0,5l)"
+                    priceLabel="Preis 6,40 Euro für 0,5 Liter"
+                    buttonUrl="https://besseressen-ka.de/shop/mein-ginger/mein-ginger-beere/"
+                    buttonAriaLabel="Zu den Produktdetails von Mein Ginger Beere in unserem besser essen Online-Shop"
+                    buttonVariant="mg-beere"
+                />
+                <ProductCard
+                    image="/images/meinginger-sanddorn-web.png"
+                    imageAlt="Mein Ginger Sanddorn - Ingwersaft mit kraftvollem Sanddorn"
+                    title="Mein Ginger Sanddorn"
+                    description="Mit der kraftvollen Sanddorn-Komponente"
+                    price="6,40 € (0,5l)"
+                    priceLabel="Preis 6,40 Euro für 0,5 Liter"
+                    buttonUrl="https://besseressen-ka.de/shop/mein-ginger/mein-ginger-sanddorn/"
+                    buttonAriaLabel="Zu den Produktdetails von Mein Ginger Sanddorn in unserem besser essen Online-Shop"
+                    buttonVariant="mg-sanddorn"
+                />
+                <ProductCard
+                    image="/images/meinginger-spirit-web.png"
+                    imageAlt="Mein Ginger Spirit - Fix und fertig gemischt zum direkt Trinken"
+                    title="Mein Ginger Spirit"
+                    description="Die konzentrierte Kraft, fix und fertig gemischt zum direkt Trinken und geboostet werden!"
+                    price="4,40 € (0,3l)"
+                    priceLabel="Preis 4,40 Euro für 0,3 Liter"
+                    buttonUrl="https://besseressen-ka.de/shop/mein-ginger/mein-ginger-spirit/"
+                    buttonAriaLabel="Zu den Produktdetails von Mein Ginger Spirit in unserem besser essen Online-Shop"
+                    buttonVariant="mg-spirit"
+                />
             </div>
         </div>
     </section>
 
-    {/* CTA Section */}
-    <section class="content-section cta-section" aria-labelledby="cta-heading">
-        <div class="content-section__content">
-            <h2 id="cta-heading">Bereit für dein Ginger-Abenteuer?</h2>
-            <p>Entdecke jetzt alle Varianten von Mein Ginger im Shop und finde deine Lieblings-Sorte</p>
-            <a
-                href="https://besseressen-ka.de/produkte/mein-ginger/"
-                target="_blank"
-                class="btn btn-primary btn-large"
-                aria-label="Zum Online-Shop von besseressen-ka.de - Mein Ginger kaufen"
-            >
-                Zum Shop
-            </a>
-        </div>
-    </section>
+    <CTASection
+        headline="Bereit für dein Ginger-Abenteuer?"
+        text="Entdecke jetzt alle Varianten von Mein Ginger im Shop und finde deine Lieblings-Sorte"
+        cta={{
+            href: 'https://besseressen-ka.de/produkte/mein-ginger/',
+            ariaLabel: 'Zum unserem besser essen Online Shop - Mein Ginger kaufen',
+            size: 'large',
+            type: 'external',
+            text: 'Zum Shop'
+        }}
+    />
 
     {/* Retailers Section */}
     <section id="retailers" class="content-section retailers" aria-labelledby="retailers-heading">
         <div class="content-section__content">
             <h2 id="retailers-heading">Wo findest du Mein Ginger?</h2>
-            <p>Mein Ginger ist bei ausgewählten Verkaufsstellen erhältlich. Besuche unsere Verkaufsstellenkarte, um einen Händler in deiner Nähe zu finden.</p>
-            <div class="retailers-grid" role="list">
-                <div class="retailer-card" role="listitem">
-                    <h3>🏪 Online Shop</h3>
-                    <p>Bestelle bequem von zuhause</p>
-                    <a
-                        class="btn btn-secondary"
-                        href="https://besseressen-ka.de/produkte/mein-ginger/"
-                        target="_blank"
-                        aria-label="Zum Online-Shop - Mein Ginger kaufen"
-                    >
-                        Zum Shop
-                    </a>
-                </div>
-                <div class="retailer-card" role="listitem">
-                    <h3>🏢 Stammgeschäft</h3>
-                    <p>
-                        Kleine Feinschmeckerei<br />Amthausstraße 7<br />76227 Karlsruhe
-                    </p>
-                </div>
-                <div class="retailer-card" role="listitem">
-                    <h3>🗺️ Weitere Händler</h3>
-                    <p>Finde einen Händler in deiner Nähe auf unserer Verkaufsstellenkarte</p>
-                </div>
+            <p>Mein Ginger ist bei bei uns in Durlach erhältlich, ansonsten kannst du Mein Ginger auch über unseren Onlineshop kaufen.</p>
+            <div class="retailers-grid retailers-grid" role="list">
+                <RetailerCard
+                    title="🏪 Online Shop"
+                    description="Bestelle bequem von zuhause über unseren besser essen Onlineshop"
+                    buttonText="Zu unserem Shop"
+                    buttonUrl="https://besseressen-ka.de/produkte/mein-ginger/"
+                    buttonAriaLabel="Zum Online-Shop - Mein Ginger kaufen"
+                />
+                <RetailerCard
+                    title="🏢 Stammgeschäft"
+                    html="Kleine Feinschmeckerei<br />Amthausstraße 7<br />76227 Karlsruhe"
+                    buttonText="🗺️ Routenplanung"
+                    buttonUrl="https://www.google.com/maps/dir/?api=1&destination=Kleine+Feinschmeckerei,+Amthausstrasse+7,+76227+Karlsruhe,+DE"
+                    buttonAriaLabel="Zur Routenplanung von Google Maps"
+                />
+                {/*<RetailerCard title="🗺️ Weitere Händler" description="Finde einen Händler in deiner Nähe auf unserer Verkaufsstellenkarte" />*/}
             </div>
         </div>
     </section>
@@ -248,68 +199,12 @@ import Layout from '../layouts/Layout.astro';
         margin-top: 2rem;
     }
 
-    .ingredient-card {
-        background: white;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        text-align: left;
-    }
-
-    .ingredient-card h3 {
-        color: var(--color-primary);
-        margin-bottom: 1rem;
-        font-size: 1.3rem;
-    }
-
-    .ingredient-card p {
-        color: #666;
-        font-size: 0.95rem;
-    }
-
     /* Ingredients Section */
 
     .ingredients-list {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 2rem;
-    }
-
-    .ingredient {
-        padding: 1.5rem;
-        background: linear-gradient(135deg, #faf8f3 0%, #f5f0e8 100%);
-        border-left: 4px solid var(--color-primary);
-        border-radius: 8px;
-    }
-
-    .ingredient-percent {
-        display: inline-block;
-        background-color: var(--color-primary);
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 50%;
-        font-weight: bold;
-        margin-bottom: 1rem;
-        min-width: 50px;
-        text-align: center;
-    }
-
-    .ingredient-icon {
-        display: block;
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .ingredient h4 {
-        color: #333;
-        margin: 0.5rem 0;
-        font-size: 1.1rem;
-    }
-
-    .ingredient p {
-        color: #666;
-        font-size: 0.9rem;
-        margin: 0;
     }
 
     /* How to Use Section */
@@ -324,34 +219,6 @@ import Layout from '../layouts/Layout.astro';
         margin: 2rem 0;
     }
 
-    .step {
-        text-align: center;
-        padding: 2rem;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .step-number {
-        width: 60px;
-        height: 60px;
-        background-color: var(--color-primary);
-        color: white;
-        font-size: 1.8rem;
-        font-weight: bold;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 1rem;
-    }
-
-    .step h3 {
-        font-size: 1.1rem;
-        color: #333;
-        margin: 0;
-    }
-
     /* Variants Section */
 
     .variants-grid {
@@ -359,43 +226,6 @@ import Layout from '../layouts/Layout.astro';
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 2rem;
         margin-bottom: 2rem;
-    }
-
-    .variant-card {
-        background: #faf8f3;
-        padding: 2rem;
-        border-radius: 8px;
-        text-align: center;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .variant-card img {
-        width: 100%;
-        height: 250px;
-        object-fit: contain;
-        margin-bottom: 1.5rem;
-    }
-
-    .variant-card h3 {
-        color: #333;
-        font-size: 1.3rem;
-        margin: 1rem 0;
-    }
-
-    .variant-card p {
-        color: #666;
-        margin-bottom: 1rem;
-        font-size: 0.95rem;
-    }
-
-    .price {
-        color: var(--color-primary);
-        font-weight: bold;
-        font-size: 1.2rem;
-        margin-top: 1rem;
     }
 
     .variants-additional {
@@ -411,7 +241,6 @@ import Layout from '../layouts/Layout.astro';
     .retailers p {
         text-align: center;
         font-size: 1.1rem;
-        margin-bottom: 2rem;
         max-width: 800px;
         margin-left: auto;
         margin-right: auto;
@@ -423,62 +252,10 @@ import Layout from '../layouts/Layout.astro';
         gap: 2rem;
     }
 
-    .retailer-card {
-        background: white;
-        padding: 2rem;
-        border-radius: 8px;
-        text-align: center;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .retailer-card h3 {
-        color: var(--color-primary);
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-    }
-
-    .retailer-card p {
-        color: #666;
-        margin-bottom: 1rem;
-        line-height: 1.6;
-    }
-
     /* Responsive Design */
     @media (max-width: 560px) {
         .cta-buttons {
             flex-direction: column;
-        }
-
-        .btn {
-            width: 100%;
-            text-align: center;
-        }
-
-        /* Mobile Slider for tiled content */
-        .preparation,
-        .ingredients-highlight,
-        .ingredients-list,
-        .variants-grid,
-        .retailers-grid {
-            display: flex;
-            overflow-x: auto;
-            gap: 1.5rem;
-            scroll-snap-type: x mandatory;
-            padding-bottom: 1rem;
-            -webkit-overflow-scrolling: touch;
-            margin-left: -1rem;
-            margin-right: -1rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-
-        .step,
-        .ingredient-card,
-        .ingredient,
-        .variant-card,
-        .retailer-card {
-            flex: 0 0 calc(100vw - 7.5rem);
-            scroll-snap-align: center;
         }
     }
 </style>

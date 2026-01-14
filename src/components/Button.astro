@@ -1,0 +1,25 @@
+---
+interface Props {
+    href: string;
+    variant?: 'primary' | 'secondary' | 'mg-original' | 'mg-beere' | 'mg-sanddorn' | 'mg-spirit';
+    size?: 'default' | 'large';
+    type?: 'internal' | 'external';
+    ariaLabel?: string;
+    class?: string;
+}
+
+const { href, variant = 'primary', size = 'default', type, ariaLabel, class: className = '' } = Astro.props;
+
+const variantClass = `btn-${variant}`;
+const sizeClass = size === 'large' ? 'btn-large' : '';
+---
+
+<a
+    href={href}
+    class={`btn animate-on-hover ${variantClass} ${sizeClass} ${className}`}
+    aria-label={ariaLabel}
+    target={type === 'external' ? '_blank' : null}
+    rel={type === 'external' ? 'noopener noreferrer' : null}
+>
+    <slot />
+</a>

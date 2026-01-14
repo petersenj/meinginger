@@ -1,0 +1,29 @@
+---
+const { text } = Astro.props;
+---
+
+<p class="tip">
+    <span><strong>Tipp:</strong> {text}</span>
+    <slot />
+</p>
+<style>
+    .tip {
+        background-color: #fff9e6;
+        padding: 1rem;
+        border-radius: 8px;
+        color: #333;
+        font-size: 0.9rem;
+        margin: 0 auto;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    @media screen and (min-width: 560px) {
+        .tip {
+            flex-direction: row;
+        }
+    }
+</style>

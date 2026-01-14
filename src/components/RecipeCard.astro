@@ -1,0 +1,121 @@
+---
+import Tip from './Tip.astro';
+
+interface Ingredient {
+    label: string;
+    name: string;
+}
+
+interface Props {
+    icon: string;
+    title: string;
+    description: string;
+    ingredients: Ingredient[];
+    tip: string;
+    ingredientsLabel: string;
+}
+
+const { icon, title, description, ingredients, tip, ingredientsLabel } = Astro.props;
+---
+
+<article class="recipe-card animate-on-hover" role="listitem">
+    <div class="recipe-icon" aria-hidden="true">{icon}</div>
+    <h3>{title}</h3>
+    <p class="recipe-description">{description}</p>
+    <div class="recipe-ingredients" role="region" aria-label={ingredientsLabel}>
+        {
+            ingredients.map((ingredient) => (
+                <div class="ingredient-item">
+                    <span class="ingredient-label">{ingredient.label}</span>
+                    <span class="ingredient-name">{ingredient.name}</span>
+                </div>
+            ))
+        }
+    </div>
+    <Tip text={tip} />
+</article>
+
+<style>
+    .recipe-card {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-top: 4px solid var(--color-primary-punch);
+    }
+
+    .recipe-icon {
+        font-size: 3rem;
+        display: block;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .recipe-card h3 {
+        color: #333;
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+
+    .recipe-description {
+        color: #666;
+        text-align: center;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+        font-style: italic;
+    }
+
+    .recipe-ingredients {
+        background: linear-gradient(135deg, #faf8f3 0%, #f5f0e8 100%);
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+    }
+
+    .ingredient-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        gap: 1rem;
+    }
+
+    .ingredient-item:last-child {
+        margin-bottom: 0;
+    }
+    .ingredient-label {
+        background-image: linear-gradient(135deg, var(--color-mg-original) 0%, var(--color-mg-beere) 100%);
+
+        color: white;
+        padding: 0.4rem 0.8rem;
+        border-radius: 4px;
+        font-weight: bold;
+        font-size: 0.85rem;
+        white-space: nowrap;
+        min-width: 50px;
+        text-align: center;
+        flex-shrink: 0;
+    }
+
+    .ingredient-name {
+        color: #333;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        text-align: left;
+    }
+
+    @media (max-width: 560px) {
+        .recipe-card {
+            padding: 1.5rem;
+        }
+
+        .ingredient-item {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .ingredient-label {
+            width: 100%;
+        }
+    }
+</style>

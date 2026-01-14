@@ -11,7 +11,7 @@ const navItems = [
 ---
 
 <nav class="sticky-nav" aria-label="Hauptnavigation">
-    <div class="nav-container j--max-content-width flex flex-wrap items-center justify-between px-3 sm:px-12 py-6">
+    <div class="nav-container j--max-content-width flex flex-wrap items-center justify-between px-3 sm:px-12 py-6 max-w-5xl mx-auto">
         <a href="/" aria-label="Mein Ginger - Zur Startseite">
             <Logo />
         </a>
@@ -22,7 +22,7 @@ const navItems = [
                 <ul class="nav-desktop flex flex-wrap gap-x-4 gap-y-1" role="list">
                     {navItems.map((item) => (
                         <li role="listitem">
-                            <a href={item.href} class="inline-block px-1.5 py-1 sm:px-3 sm:py-2 btn btn-secondary" aria-label={item.ariaLabel}>
+                            <a href={item.href} class="animate-on-hover inline-block px-1.5 py-1 sm:px-3 sm:py-2 btn btn-secondary" aria-label={item.ariaLabel}>
                                 {item.linkText}
                             </a>
                         </li>
@@ -71,6 +71,8 @@ const navItems = [
 
     .nav-container {
         transition: padding 0.3s ease;
+        position: relative;
+        z-index: 2;
     }
 
     .sticky-nav.scrolled .nav-container {
@@ -104,7 +106,6 @@ const navItems = [
         right: 1rem;
         top: 50%;
         transform: translateY(-50%);
-        z-index: 1001;
     }
 
     @media screen and (min-width: 640px) {
@@ -142,7 +143,7 @@ const navItems = [
         width: 100%;
         height: 100vh;
         background: white;
-        z-index: 999;
+        z-index: 1;
         overflow-y: auto;
         transform: translateX(100%);
         transition: transform 0.3s ease;

@@ -1,0 +1,70 @@
+---
+const { page, headline, tagline, subtitle } = Astro.props;
+---
+
+<section class={'content-section hero hero-' + page} aria-labelledby="hero-heading">
+    <div class="content-section__content">
+        <div class="hero-content">
+            <h1 id="hero-heading">{headline}</h1>
+            <p class="tagline" role="subtitle">{tagline}</p>
+            <p class="subtitle">{subtitle}</p>
+            <slot />
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero {
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        align-items: end;
+        height: 100dvh;
+    }
+
+    @media screen and (min-width: 640px) {
+        .hero {
+            height: 75vh;
+        }
+    }
+
+    .hero-content h1 {
+        font-size: 4rem;
+        color: var(--color-primary);
+        margin-bottom: 0.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 560px) {
+        .hero-content h1 {
+            font-size: 2.5rem;
+        }
+    }
+
+    .hero-index {
+        background-image: url('/images/hero-index.jpg');
+    }
+
+    .hero-rezepte {
+        background-image: url('/images/hero-rezepte.jpg');
+    }
+
+    .tagline {
+        font-size: 1.8rem;
+        color: var(--color-complementary);
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    @media (max-width: 560px) {
+        .tagline {
+            font-size: 1.4rem;
+        }
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        color: #333;
+    }
+</style>

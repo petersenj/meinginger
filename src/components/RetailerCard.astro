@@ -1,0 +1,48 @@
+---
+import Button from './Button.astro';
+
+interface Props {
+    title: string;
+    description?: string;
+    html?: string;
+    buttonText?: string;
+    buttonUrl?: string;
+    buttonAriaLabel?: string;
+}
+
+const { title, description, html, buttonText, buttonUrl, buttonAriaLabel } = Astro.props;
+---
+
+<div class="retailer-card" role="listitem">
+    <h3>{title}</h3>
+    {description && <p>{description}</p>}
+    {html && <p set:html={html} />}
+    {
+        buttonText && buttonUrl && (
+            <Button href={buttonUrl} ariaLabel={buttonAriaLabel} variant="secondary" type="external">
+                {buttonText}
+            </Button>
+        )
+    }
+</div>
+
+<style>
+    .retailer-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .retailer-card h3 {
+        color: var(--color-primary);
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .retailer-card p {
+        color: #666;
+        line-height: 1.6;
+    }
+</style>
