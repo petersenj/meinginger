@@ -25,26 +25,51 @@ const seoData = {
 const schemaData = {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: 'Mein Ginger Original',
-    description: 'Hausgemachter Ingwer-Mehrfruchtsaft mit Apfel, frischem Ingwer, Orange, Ananas, Passionsfrucht, Mango und Banane',
+    name: 'Mein Ginger',
+    description: 'Hausgemachter Ingwer-Mehrfruchtsaft mit natürlichen Zutaten und viel frisch geraspeltem Ingwer.',
     image: '/images/meinginger-1x1.jpg',
     brand: {
         '@type': 'Brand',
         name: 'Mein Ginger'
     },
     offers: {
-        '@type': 'Offer',
-        url: 'https://besseressen-ka.de/produkte/mein-ginger/',
+        '@type': 'AggregateOffer',
         priceCurrency: 'EUR',
-        price: '6.40'
+        offers: [
+            {
+                '@type': 'Offer',
+                name: 'Mein Ginger Original',
+                url: 'https://besseressen-ka.de/shop/mein-ginger/mein-ginger-original/',
+                price: '6.40',
+                priceCurrency: 'EUR',
+                description: 'Ingwer-Mehrfruchtsaft mit Apfel, frischem Ingwer, Orange, Ananas, Passionsfrucht, Mango und Banane'
+            },
+            {
+                '@type': 'Offer',
+                name: 'Mein Ginger Beere',
+                url: 'https://besseressen-ka.de/shop/mein-ginger/mein-ginger-beere/',
+                price: '6.40',
+                priceCurrency: 'EUR',
+                description: 'Ingwersaft mit frischem Ingwer und fruchtiger Beeren-Note'
+            },
+            {
+                '@type': 'Offer',
+                name: 'Mein Ginger Sanddorn',
+                url: 'https://besseressen-ka.de/shop/mein-ginger/mein-ginger-sanddorn/',
+                price: '6.40',
+                priceCurrency: 'EUR',
+                description: 'Ingwersaft mit frischem Ingwer und exotischer Sanddorn-Note'
+            },
+            {
+                '@type': 'Offer',
+                name: 'Mein Ginger Spirit',
+                url: 'https://besseressen-ka.de/shop/mein-ginger/mein-ginger-spirit/',
+                price: '4.40',
+                priceCurrency: 'EUR',
+                description: 'Fix und fertig gemischter frischer Ingwersaft zum direkt Trinken'
+            }
+        ]
     }
-    /*aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '5',
-        bestRating: '5',
-        worstRating: '1',
-        ratingCount: '100'
-    }*/
 };
 
 const organizationSchema = {
