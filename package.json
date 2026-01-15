@@ -11,6 +11,7 @@
     },
     "dependencies": {
         "@astrojs/netlify": "^6.6.0",
+        "@mdi/js": "^7.4.47",
         "@netlify/functions": "^5.1.2",
         "@tailwindcss/vite": "^4.1.16",
         "astro": "^5.15.0",

@@ -1,15 +1,26 @@
 ---
+import Icon from './Icon.astro';
+
 interface Props {
     number: number;
     title: string;
     description: string;
+    iconSVG?: string;
 }
 
-const { number, title, description } = Astro.props;
+const { number, title, description, iconSVG } = Astro.props;
 ---
 
 <div class="inspiration-card animate-on-hover" role="listitem">
-    <div class="inspiration-number">{number}</div>
+    {
+        iconSVG ? (
+            <div class="inspiration-icon">
+                <Icon svg={iconSVG} size="lg" />
+            </div>
+        ) : (
+            <div class="inspiration-number">{number}</div>
+        )
+    }
     <h3>{title}</h3>
     <p>{description}</p>
 </div>
@@ -36,6 +47,12 @@ const { number, title, description } = Astro.props;
         align-items: center;
         justify-content: center;
         margin: 0 auto 1rem;
+    }
+
+    .inspiration-icon {
+        margin: 0 auto 1rem;
+        display: flex;
+        justify-content: center;
     }
 
     .inspiration-card h3 {

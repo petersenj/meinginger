@@ -1,4 +1,6 @@
 ---
+import { mdiBlender, mdiCake, mdiCakeLayered, mdiGlassCocktail, mdiIceCream, mdiIcePop, mdiNoodles, mdiSilverwareForkKnife, mdiTea, mdiWater } from '@mdi/js';
+
 import Layout from '../layouts/Layout.astro';
 import RecipeCard from '../components/RecipeCard.astro';
 import InspirationCard from '../components/InspirationCard.astro';
@@ -14,7 +16,6 @@ import Hero from '../components/Hero.astro';
         tagline="KREATIV GENIEßEN"
         subtitle="Unser Mein Ginger, Mein Ginger Beere und Mein Ginger Sanddorn eignen sich hervorragend zum reinen Genuss, bieten aber auch viele weitere Möglichkeiten. Experimentieren erlaubt 😉"
     />
-
     <section class="content-section recipes" aria-labelledby="recipes-heading">
         <div class="content-section__content">
             <h2 id="recipes-heading">Klassische Rezepte</h2>
@@ -22,7 +23,7 @@ import Hero from '../components/Hero.astro';
 
             <div class="recipes-grid" role="list">
                 <RecipeCard
-                    icon="💧"
+                    iconSVG={mdiWater}
                     title="Mein Ginger Standard"
                     description="Der Klassiker - erfrischend und perfekt für jeden Tag"
                     ingredients={[
@@ -33,7 +34,7 @@ import Hero from '../components/Hero.astro';
                     ingredientsLabel="Zutaten für Mein Ginger Standard"
                 />
                 <RecipeCard
-                    icon="☕"
+                    iconSVG={mdiTea}
                     title="Mein Ginger als Tee"
                     description="Wärmend und belebend für kühlere Tage"
                     ingredients={[
@@ -44,7 +45,7 @@ import Hero from '../components/Hero.astro';
                     ingredientsLabel="Zutaten für Mein Ginger Tee"
                 />
                 <RecipeCard
-                    icon="🥛"
+                    iconSVG={mdiGlassCocktail}
                     title="Mein Ginger White"
                     description="Cremig und köstlich - eine sanfte Variante"
                     ingredients={[
@@ -64,7 +65,7 @@ import Hero from '../components/Hero.astro';
 
             <div class="recipes-grid" role="list">
                 <RecipeCard
-                    icon="🍨"
+                    iconSVG={mdiIceCream}
                     title="Mein Ginger Dessertidee"
                     description="Ein eleganter Genuss für festliche Momente"
                     ingredients={[
@@ -77,7 +78,7 @@ import Hero from '../components/Hero.astro';
                     ingredientsLabel="Zutaten für Mein Ginger Dessert"
                 />
                 <RecipeCard
-                    icon="🍦"
+                    iconSVG={mdiIcePop}
                     title="Mein Ginger Eis"
                     description="Selbstgemachtes Fruchteis mit dem besonderen Kick"
                     ingredients={[
@@ -97,7 +98,7 @@ import Hero from '../components/Hero.astro';
 
             <div class="recipes-grid" role="list">
                 <RecipeCard
-                    icon="🍜"
+                    iconSVG={mdiNoodles}
                     title="Mit Mein Ginger verfeinert"
                     description="Für Soßen in asiatischen Gerichten"
                     ingredients={[
@@ -117,14 +118,30 @@ import Hero from '../components/Hero.astro';
             <p>Werde selbst kreativ und probiere Mein Ginger in deiner eigenen Kreation</p>
 
             <div class="inspiration-grid" role="list">
-                <InspirationCard number={1} title="🌊 Smoothie Bowls" description="Mixe Mein Ginger mit Joghurt und Früchten für leckere Smoothie Bowls" />
+                <InspirationCard
+                    number={1}
+                    title="Smoothie Bowls"
+                    description="Mixe Mein Ginger mit Joghurt und Früchten für leckere Smoothie Bowls"
+                    iconSVG={mdiBlender}
+                />
                 <InspirationCard
                     number={2}
-                    title="🍷 Cocktails & Mocktails"
+                    title="Cocktails & Mocktails"
                     description="Mein Ginger ist die perfekte Basis für erfrischende Getränke - egal ob mit, oder ohne Alkohol"
+                    iconSVG={mdiGlassCocktail}
                 />
-                <InspirationCard number={3} title="🧁 Baking & Desserts" description="Verwende Mein Ginger als Komponente in Kuchen und Desserts" />
-                <InspirationCard number={4} title="🥗 Salad Dressings" description="Kreiere spannende Salatdressings mit dem besonderen Ginger-Kick" />
+                <InspirationCard
+                    number={3}
+                    title="Baking & Desserts"
+                    description="Verwende Mein Ginger als Komponente in Kuchen und Desserts"
+                    iconSVG={mdiCake}
+                />
+                <InspirationCard
+                    number={4}
+                    title="Salad Dressings"
+                    description="Kreiere spannende Salatdressings mit dem besonderen Ginger-Kick"
+                    iconSVG={mdiSilverwareForkKnife}
+                />
             </div>
         </div>
     </section>

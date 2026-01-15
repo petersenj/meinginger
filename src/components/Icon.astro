@@ -1,0 +1,31 @@
+---
+interface Props {
+    svg: string;
+    size?: 'sm' | 'md' | 'lg';
+    filled?: boolean;
+    class?: string;
+    ariaHidden?: boolean;
+}
+
+const { svg, size = 'md', filled = false, class: className, ariaHidden = true } = Astro.props;
+
+const sizeMap = {
+    sm: '1.25rem',
+    md: '1.5rem',
+    lg: '2rem'
+};
+
+const fontSize = sizeMap[size];
+---
+
+<span class="icon" aria-hidden={ariaHidden} role={ariaHidden ? 'presentation' : undefined}>
+    <svg style={{ height: fontSize, width: fontSize }} viewBox="0 0 24 24">
+        <path fill="currentColor" d={svg}></path>
+    </svg>
+</span>
+
+<style>
+    .icon {
+        color: var(--color-primary-punch);
+    }
+</style>

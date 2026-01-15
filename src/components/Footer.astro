@@ -1,5 +1,6 @@
 ---
-
+import Icon from './Icon.astro';
+import { mdiHeart } from '@mdi/js';
 ---
 
 <footer class="pt-16 pb-12 sm:pt-24 sm:pb-16 px-3 sm:px-12 max-w-5xl mx-auto">
@@ -12,5 +13,5 @@
         <a href="https://besseressen-ka.de/impressum/" target="_blank" class="decoration-dashed text-primary underline-offset-8">Impressum</a>
         &nbsp;&nbsp;|&nbsp;&nbsp; * aus biologischem Anbau
     </p>
-    <p class="text-sm mt-4">Mit Liebe hergestellt in Durlach ♥️</p>
+    <p class="text-sm mt-4">Mit Liebe hergestellt in Durlach <Icon name={mdiHeart} size="sm" filled /></p>
 </footer>

@@ -9,6 +9,18 @@ import Button from '../components/Button.astro';
 import Tip from '../components/Tip.astro';
 import CTASection from '../components/CTASection.astro';
 import Hero from '../components/Hero.astro';
+import {
+    mdiGrain,
+    mdiFlowerPoppy,
+    mdiFoodApple,
+    mdiFruitPineapple,
+    mdiFruitCitrus,
+    mdiLocationEnter,
+    mdiShopping,
+    mdiMapMarker,
+    mdiStore,
+    mdiBasket
+} from '@mdi/js';
 ---
 
 <Layout title="Mein Ginger - Der Ingwer-Mehrfruchtsaft mit Kick">
@@ -64,10 +76,18 @@ import Hero from '../components/Hero.astro';
                 description="Die Power-Zutat für den besonderen Kick"
             />
             <div class="ingredients-list mobile-scroll-slider" role="list">
-                <IngredientItem icon="🍎" title="Bio-Apfelsaft*" description="Beste Saftqualität ist die Basis unseres Mehrfruchtsafts" />
-                <IngredientItem icon="🍊🍍" title="Orangen-, Ananas- & Passionsfruchtsaft" description="Für exotisches Aroma und Frische" />
-                <IngredientItem icon="🥭🍌" title="Mango- und Bananenmark**" description="Für cremige Textur und natürliche Süße" />
-                <IngredientItem icon="🌺🫐" title="Sanddorn bzw. versch. Beeren und Blüten" description="in unseren anderen Varianten." />
+                <IngredientItem icons={[mdiFoodApple]} title="Bio-Apfelsaft*" description="Beste Saftqualität ist die Basis unseres Mehrfruchtsafts" />
+                <IngredientItem
+                    icons={[mdiFruitCitrus, mdiFruitPineapple]}
+                    title="Orangen-, Ananas- & Passionsfruchtsaft"
+                    description="Für exotisches Aroma und Frische"
+                />
+                <IngredientItem title="Mango- und Bananenmark**" description="Für cremige Textur und natürliche Süße" />
+                <IngredientItem
+                    icons={[mdiFlowerPoppy, mdiGrain]}
+                    title="Sanddorn bzw. versch. Beeren und Blüten"
+                    description="in unseren anderen Varianten."
+                />
             </div>
             <small class="block mt-8">
                 ** Nach langer Standzeit kann sich Ingwer und Fruchtmark am Flaschenboden absetzen. Vor dem weiteren Verbrauch kurz schütteln!
@@ -164,18 +184,21 @@ import Hero from '../components/Hero.astro';
             <p>Mein Ginger ist bei bei uns in Durlach erhältlich, ansonsten kannst du Mein Ginger auch über unseren Onlineshop kaufen.</p>
             <div class="retailers-grid retailers-grid" role="list">
                 <RetailerCard
-                    title="🏪 Online Shop"
-                    description="Bestelle bequem von zuhause über unseren besser essen Onlineshop"
+                    title="Online Shop"
+                    description="Bestelle bequem von zuhause über unseren besser essen Onlineshop"
                     buttonText="Zu unserem Shop"
                     buttonUrl="https://besseressen-ka.de/produkte/mein-ginger/"
                     buttonAriaLabel="Zum Online-Shop - Mein Ginger kaufen"
+                    iconSVG={mdiBasket}
                 />
                 <RetailerCard
-                    title="🏢 Stammgeschäft"
+                    title="Stammgeschäft"
                     html="Kleine Feinschmeckerei<br />Amthausstraße 7<br />76227 Karlsruhe-Durlach"
-                    buttonText="🗺️ Routenplanung"
+                    buttonText="Routenplanung"
+                    buttoniconSVG={mdiMapMarker}
                     buttonUrl="https://www.google.com/maps/dir/?api=1&destination=Kleine+Feinschmeckerei,+Amthausstrasse+7,+76227+Karlsruhe,+DE"
                     buttonAriaLabel="Zur Routenplanung von Google Maps"
+                    iconSVG={mdiStore}
                 />
                 {/*<RetailerCard title="🗺️ Weitere Händler" description="Finde einen Händler in deiner Nähe auf unserer Verkaufsstellenkarte" />*/}
             </div>

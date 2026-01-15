@@ -1,22 +1,24 @@
 ---
+import Icon from './Icon.astro';
+
 interface Props {
-    icon?: string;
+    icons?: string[];
     label?: string;
     title: string;
     description: string;
     classList?: string[];
 }
 
-const { icon, label, title, description, classList } = Astro.props;
+const { icons, label, title, description, classList } = Astro.props;
 ---
 
 <div class:list={['ingredient', 'animate-on-hover', classList]} role="listitem">
     {
-        icon && (
-            <span class="ingredient-icon" aria-hidden="true">
-                {icon}
-            </span>
-        )
+        icons?.map((icon) => (
+            <div class="ingredient-icon">
+                <Icon name={icon} size="lg" />
+            </div>
+        ))
     }
     {
         label && (

@@ -1,4 +1,5 @@
 ---
+import Icon from './Icon.astro';
 import Tip from './Tip.astro';
 
 interface Ingredient {
@@ -7,7 +8,7 @@ interface Ingredient {
 }
 
 interface Props {
-    icon: string;
+    iconSVG: string;
     title: string;
     description: string;
     ingredients: Ingredient[];
@@ -15,11 +16,13 @@ interface Props {
     ingredientsLabel: string;
 }
 
-const { icon, title, description, ingredients, tip, ingredientsLabel } = Astro.props;
+const { iconSVG, title, description, ingredients, tip, ingredientsLabel } = Astro.props;
 ---
 
 <article class="recipe-card animate-on-hover" role="listitem">
-    <div class="recipe-icon" aria-hidden="true">{icon}</div>
+    <div class="recipe-icon">
+        <Icon svg={iconSVG} size="lg" />
+    </div>
     <h3>{title}</h3>
     <p class="recipe-description">{description}</p>
     <div class="recipe-ingredients" role="region" aria-label={ingredientsLabel}>

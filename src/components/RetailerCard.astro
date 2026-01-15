@@ -1,4 +1,5 @@
 ---
+import Icon from './Icon.astro';
 import Button from './Button.astro';
 
 interface Props {
@@ -6,20 +7,34 @@ interface Props {
     description?: string;
     html?: string;
     buttonText?: string;
+    buttonIcon?: string;
     buttonUrl?: string;
     buttonAriaLabel?: string;
+    iconSVG?: string;
 }
 
-const { title, description, html, buttonText, buttonUrl, buttonAriaLabel } = Astro.props;
+const { title, description, html, buttonText, buttonIcon, buttonUrl, buttonAriaLabel, iconSVG } = Astro.props;
 ---
 
 <div class="retailer-card" role="listitem">
+    {
+        iconSVG && (
+            <div class="retailer-icon">
+                <Icon svg={iconSVG} size="lg" />
+            </div>
+        )
+    }
     <h3>{title}</h3>
     {description && <p>{description}</p>}
     {html && <p set:html={html} />}
     {
         buttonText && buttonUrl && (
             <Button href={buttonUrl} ariaLabel={buttonAriaLabel} variant="secondary" type="external">
+                {buttonIcon && (
+                    <div class="retailer-icon">
+                        <Icon name={buttonIcon} size="lg" />
+                    </div>
+                )}
                 {buttonText}
             </Button>
         )
@@ -37,6 +52,13 @@ const { title, description, html, buttonText, buttonUrl, buttonAriaLabel } = Ast
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .retailer-icon {
+        color: var(--color-primary);
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
     }
 
     .retailer-card h3 {
