@@ -16,7 +16,13 @@
 @layer base {
     * {
         scroll-behavior: smooth;
-        scroll-margin-top: 3rem;
+        scroll-margin-top: 53px; /*mobile header height */
+    }
+
+    @media screen and (min-width: 560px) {
+        * {
+            scroll-margin-top: 0;
+        }
     }
 
     body {
