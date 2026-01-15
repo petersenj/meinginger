@@ -3,7 +3,7 @@ const { page, headline, tagline, subtitle } = Astro.props;
 ---
 
 <section class={'content-section hero hero-' + page} aria-labelledby="hero-heading">
-    <div class="content-section__content">
+    <div class="content-section__content hero-content-background">
         <div class="hero-content">
             <h1 id="hero-heading">{headline}</h1>
             <p class="tagline" role="subtitle">{tagline}</p>
@@ -16,17 +16,24 @@ const { page, headline, tagline, subtitle } = Astro.props;
 <style>
     .hero {
         background-attachment: fixed;
-        background-position: center;
+        background-position: bottom;
         background-size: cover;
         display: flex;
         align-items: end;
         height: 100dvh;
+        min-height: fit-content;
     }
 
     @media screen and (min-width: 640px) {
         .hero {
-            height: 75vh;
+            height: 85vh;
         }
+    }
+
+    .hero-content-background {
+        background-color: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(15px);
+        margin-block-start: 150px;
     }
 
     .hero-content h1 {
@@ -48,6 +55,12 @@ const { page, headline, tagline, subtitle } = Astro.props;
 
     .hero-rezepte {
         background-image: url('/images/hero-rezepte.jpg');
+    }
+
+    @media screen and (min-width: 1669px) {
+        .hero {
+            background-position: center;
+        }
     }
 
     .tagline {
