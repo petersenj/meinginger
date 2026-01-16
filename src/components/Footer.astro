@@ -4,21 +4,30 @@ import { mdiHeart } from '@mdi/js';
 ---
 
 <footer class="pt-16 pb-12 sm:pt-24 sm:pb-16 px-3 sm:px-12 max-w-5xl mx-auto" role="contentinfo">
-    <div class="sm:flex" style="justify-content: space-between; align-items: flex-start;">
-        <div>
-            <p class="text-sm" style="line-height:2rem">
+    <div class="sm:flex mb-4" style="justify-content: space-between; align-items: flex-start;">
+        <div class="mb-2">
+            <p class="text-sm">
                 (C) {new Date().getFullYear()} Mein&nbsp;Ginger. Alle&nbsp;Rechte&nbsp;vorbehalten.
             </p>
+            <p class="text-sm">* aus alternativem, nachhaltigem Anbau</p>
         </div>
-        <ul class="sm:flex text-sm" style="gap:1.5rem; flex-wrap:wrap;justify-content:flex-end;line-height: 2;">
-            <li><a href="https://besseressen-ka.de/impressum/" target="_blank" class="decoration-dashed text-primary underline-offset-8">Impressum</a></li>
-        </ul>
+        <nav aria-label="Rechtliches">
+            <ul class="sm:flex text-sm" style="gap:1.5rem; flex-wrap:wrap;justify-content:flex-end;line-height: 2;">
+                <li><a href="https://besseressen-ka.de/impressum/" target="_blank" class="decoration-dashed text-primary underline-offset-8">Impressum</a></li>
+            </ul>
+        </nav>
     </div>
-    <p class="text-sm mt-4">
+    <p class="text-sm">
         Herstellung durch
         <a href="https://kleinefeinschmeckerei.de/" target="_blank" class="decoration-dashed text-primary underline-offset-8">Kleine Feinschmeckerei</a>.
         Vertrieb durch
         <a href="https://besseressen-ka.de/" target="_blank" class="decoration-dashed text-primary underline-offset-8">besser&nbsp;essen</a>.
     </p>
-    <p class="text-sm mt-4">Mit Liebe hergestellt in Durlach <Icon svg={mdiHeart} size="sm" /></p>
+    <p class="text-sm">Mit Liebe hergestellt in Durlach <Icon svg={mdiHeart} size="sm" /></p>
 </footer>
+
+<style>
+    p {
+        line-height: 2;
+    }
+</style>
