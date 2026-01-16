@@ -6,7 +6,7 @@ const { page, headline, tagline, subtitle } = Astro.props;
     <div class="content-section__content hero-content-background">
         <div class="hero-content">
             <h1 id="hero-heading">{headline}</h1>
-            <p class="tagline" role="subtitle">{tagline}</p>
+            <p class="tagline">{tagline}</p>
             <p class="subtitle">{subtitle}</p>
             <slot />
         </div>

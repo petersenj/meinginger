@@ -19,15 +19,21 @@ const navItems = [
         {/* Desktop Navigation */}
         {
             !!navItems?.length && (
-                <ul class="nav-desktop flex flex-wrap gap-x-4 gap-y-1" role="list">
-                    {navItems.map((item) => (
-                        <li role="listitem">
-                            <a href={item.href} class="animate-on-hover inline-block px-1.5 py-1 sm:px-3 sm:py-2 btn btn-secondary" aria-label={item.ariaLabel}>
-                                {item.linkText}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
+                <nav class="nav-desktop" role="navigation" aria-label="Hauptnavigation">
+                    <ul class="nav-desktop flex flex-wrap gap-x-4 gap-y-1">
+                        {navItems.map((item) => (
+                            <li role="listitem">
+                                <a
+                                    href={item.href}
+                                    class="animate-on-hover inline-block px-1.5 py-1 sm:px-3 sm:py-2 btn btn-secondary"
+                                    aria-label={item.ariaLabel}
+                                >
+                                    {item.linkText}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
             )
         }
 
@@ -42,8 +48,8 @@ const navItems = [
     {/* Mobile Navigation Menu */}
     {
         !!navItems?.length && (
-            <div class="mobile-menu" id="mobile-menu" role="region" aria-label="Mobile Navigation">
-                <ul class="mobile-nav-list px-3 sm:px-12 max-w-5xl mx-auto" role="list">
+            <nav class="mobile-menu" id="mobile-menu" role="region" aria-label="Mobile Navigation">
+                <ul class="mobile-nav-list px-3 sm:px-12 max-w-5xl mx-auto">
                     {navItems.map((item) => (
                         <li role="listitem">
                             <a href={item.href} class="mobile-nav-link" aria-label={item.ariaLabel}>
@@ -52,7 +58,7 @@ const navItems = [
                         </li>
                     ))}
                 </ul>
-            </div>
+            </nav>
         )
     }
 </nav>

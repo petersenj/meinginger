@@ -8,7 +8,7 @@ interface Props {
 const { number, title, ariaLabel = `Schritt ${number}` } = Astro.props;
 ---
 
-<div class="step animate-on-hover" role="step">
+<div class="step animate-on-hover" role="listitem">
     <div class="step-number highlight-gradient" aria-label={ariaLabel}>{number}</div>
     <h3>{title}</h3>
 </div>

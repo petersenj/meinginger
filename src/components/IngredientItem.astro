@@ -15,7 +15,7 @@ interface Props {
 const { isHighlight, image, imageLeft, imageRight, label, title, description, classList } = Astro.props;
 ---
 
-<div class:list={['ingredient', 'animate-on-hover', isHighlight ? 'highlight' : '', classList]} role="listitem">
+<div class:list={['ingredient', 'animate-on-hover', isHighlight ? 'highlight' : '', classList]} role={isHighlight ? null : 'listitem'}>
     <div class="content">
         {
             image && (
