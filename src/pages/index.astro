@@ -110,6 +110,30 @@ import { mdiMapMarker, mdiStore, mdiBasket } from '@mdi/js';
         </div>
     </section>
 
+    <section class="content-section" aria-labelledby="how-to-heading">
+        <div class="content-section__content">
+            <div class="mood" style="align-items:stretch" role="doc-chapter" aria-label="Zubereitungsschritte">
+                <img
+                    style="object-fit: cover;border-radius: 8px;"
+                    src="/images/meinginger-shot-1.webp"
+                    alt="Eine Flasche Mein Ginger Original mit Ingwer, Äpfeln, Orangen und Mango nebendran"
+                />
+                <div style="display: flex;flex-direction: column;gap: 2rem;">
+                    <img
+                        style="border-radius: 8px;"
+                        src="/images/meinginger-shot-2.webp"
+                        alt="Mein Ginger Original wird in ein Glas eingeschänkt. Daneben liegen Ingwer, Äpfel, Orangen und Mango."
+                    />
+                    <img
+                        style="border-radius: 8px;"
+                        src="/images/meinginger-shot-3.webp"
+                        alt="Nahaufnahme von Einschank von Mein Ginger Original in ein Glas. Orangen und Ingwer sind sichtbar."
+                    />
+                </div>
+            </div>
+        </div>
+    </section>
+
     {/* Product Variants Section */}
     <section id="variants" class="content-section variants" aria-labelledby="variants-heading">
         <div class="content-section__content">
@@ -239,6 +263,13 @@ import { mdiMapMarker, mdiStore, mdiBasket } from '@mdi/js';
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 2rem;
         margin: 2rem 0;
+    }
+
+    .mood {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 2rem;
+        align-items: stretch;
     }
 
     /* Variants Section */
