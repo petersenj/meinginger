@@ -7,13 +7,13 @@ interface Props {
     description?: string;
     html?: string;
     buttonText?: string;
-    buttonIcon?: string;
+    buttonIconSVG?: string;
     buttonUrl?: string;
     buttonAriaLabel?: string;
     iconSVG?: string;
 }
 
-const { title, description, html, buttonText, buttonIcon, buttonUrl, buttonAriaLabel, iconSVG } = Astro.props;
+const { title, description, html, buttonText, buttonIconSVG, buttonUrl, buttonAriaLabel, iconSVG } = Astro.props;
 ---
 
 <div class="retailer-card" role="listitem">
@@ -30,11 +30,7 @@ const { title, description, html, buttonText, buttonIcon, buttonUrl, buttonAriaL
     {
         buttonText && buttonUrl && (
             <Button href={buttonUrl} ariaLabel={buttonAriaLabel} variant="secondary" type="external">
-                {buttonIcon && (
-                    <div class="retailer-icon">
-                        <Icon name={buttonIcon} size="lg" />
-                    </div>
-                )}
+                {buttonIconSVG && <Icon svg={buttonIconSVG} />}
                 {buttonText}
             </Button>
         )

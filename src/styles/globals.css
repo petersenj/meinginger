@@ -99,6 +99,11 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
     }
 
+    .highlight-gradient {
+        background: linear-gradient(155deg, var(--color-mg-original) 10%, var(--color-mg-beere) 100%);
+        color: white;
+    }
+
     .btn {
         @apply inline-flex items-center justify-center gap-2 bg-primary text-primary-content cursor-pointer text-center font-bold no-underline;
         padding: var(--btn-py, 0.875rem) var(--btn-px, 1.25rem);

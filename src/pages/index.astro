@@ -9,18 +9,7 @@ import Button from '../components/Button.astro';
 import Tip from '../components/Tip.astro';
 import CTASection from '../components/CTASection.astro';
 import Hero from '../components/Hero.astro';
-import {
-    mdiGrain,
-    mdiFlowerPoppy,
-    mdiFoodApple,
-    mdiFruitPineapple,
-    mdiFruitCitrus,
-    mdiLocationEnter,
-    mdiShopping,
-    mdiMapMarker,
-    mdiStore,
-    mdiBasket
-} from '@mdi/js';
+import { mdiMapMarker, mdiStore, mdiBasket } from '@mdi/js';
 ---
 
 <Layout title="Mein Ginger - Der Ingwer-Mehrfruchtsaft mit Kick">
@@ -70,21 +59,31 @@ import {
             <p class="sr-only">Liste mit den wichtigsten Zutaten im Mein Ginger Ingwer-Mehrfruchtsaft</p>
 
             <IngredientItem
-                classList={['highlight']}
+                isHighlight={true}
                 label="5%"
                 title="Frisch geraspelter Bio-Ingwer* **"
                 description="Die Power-Zutat für den besonderen Kick"
+                imageLeft="/images/ingredients/ingwer-cut-transparent.webp"
+                imageRight="/images/ingredients/ingwer-raspel-cut-transparent.webp"
             />
             <div class="ingredients-list mobile-scroll-slider" role="list">
-                <IngredientItem icons={[mdiFoodApple]} title="Bio-Apfelsaft*" description="Beste Saftqualität ist die Basis unseres Mehrfruchtsafts" />
                 <IngredientItem
-                    icons={[mdiFruitCitrus, mdiFruitPineapple]}
+                    image="/images/ingredients/apfel-cut-transparent.webp"
+                    title="Bio-Apfelsaft*"
+                    description="Beste Saftqualität ist die Basis unseres Mehrfruchtsafts"
+                />
+                <IngredientItem
+                    image="/images/ingredients/orange-ananas-passionsfrucht-cut-transparent.webp"
                     title="Orangen-, Ananas- & Passionsfruchtsaft"
                     description="Für exotisches Aroma und Frische"
                 />
-                <IngredientItem title="Mango- und Bananenmark**" description="Für cremige Textur und natürliche Süße" />
                 <IngredientItem
-                    icons={[mdiFlowerPoppy, mdiGrain]}
+                    image="/images/ingredients/mango-banane-cut-transparent.webp"
+                    title="Mango- und Bananenmark**"
+                    description="Für cremige Textur und natürliche Süße"
+                />
+                <IngredientItem
+                    image="/images/ingredients/bluete-sanddorn-beere-cut-transparent.webp"
                     title="Sanddorn bzw. versch. Beeren und Blüten"
                     description="in unseren anderen Varianten."
                 />
@@ -195,7 +194,7 @@ import {
                     title="Stammgeschäft"
                     html="Kleine Feinschmeckerei<br />Amthausstraße 7<br />76227 Karlsruhe-Durlach"
                     buttonText="Routenplanung"
-                    buttoniconSVG={mdiMapMarker}
+                    buttonIconSVG={mdiMapMarker}
                     buttonUrl="https://www.google.com/maps/dir/?api=1&destination=Kleine+Feinschmeckerei,+Amthausstrasse+7,+76227+Karlsruhe,+DE"
                     buttonAriaLabel="Zur Routenplanung von Google Maps"
                     iconSVG={mdiStore}
@@ -237,7 +236,7 @@ import {
 
     .preparation {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 2rem;
         margin: 2rem 0;
     }
@@ -248,7 +247,6 @@ import {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 2rem;
-        margin-bottom: 2rem;
     }
 
     .variants-additional {

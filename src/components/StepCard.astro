@@ -9,7 +9,7 @@ const { number, title, ariaLabel = `Schritt ${number}` } = Astro.props;
 ---
 
 <div class="step animate-on-hover" role="step">
-    <div class="step-number" aria-label={ariaLabel}>{number}</div>
+    <div class="step-number highlight-gradient" aria-label={ariaLabel}>{number}</div>
     <h3>{title}</h3>
 </div>
 <style>
@@ -24,7 +24,6 @@ const { number, title, ariaLabel = `Schritt ${number}` } = Astro.props;
     .step-number {
         width: 60px;
         height: 60px;
-        background-color: var(--color-primary);
         color: white;
         font-size: 1.8rem;
         font-weight: bold;

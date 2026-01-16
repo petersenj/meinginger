@@ -2,33 +2,40 @@
 import Icon from './Icon.astro';
 
 interface Props {
-    icons?: string[];
+    isHighlight?: boolean;
+    image?: string;
+    imageLeft?: string;
+    imageRight?: string;
     label?: string;
     title: string;
     description: string;
     classList?: string[];
 }
 
-const { icons, label, title, description, classList } = Astro.props;
+const { isHighlight, image, imageLeft, imageRight, label, title, description, classList } = Astro.props;
 ---
 
-<div class:list={['ingredient', 'animate-on-hover', classList]} role="listitem">
-    {
-        icons?.map((icon) => (
-            <div class="ingredient-icon">
-                <Icon name={icon} size="lg" />
-            </div>
-        ))
-    }
-    {
-        label && (
-            <span class="ingredient-percent" aria-label={`${label} Prozent`}>
-                {label}
-            </span>
-        )
-    }
-    <h4>{title}</h4>
-    <p>{description}</p>
+<div class:list={['ingredient', 'animate-on-hover', isHighlight ? 'highlight' : '', classList]} role="listitem">
+    <div class="content">
+        {
+            image && (
+                <div class="ingredient-icon">
+                    <img src={image} alt={title} />
+                </div>
+            )
+        }
+        {
+            label && (
+                <span class="ingredient-percent highlight-gradient" aria-label={`${label} Prozent`}>
+                    {label}
+                </span>
+            )
+        }
+        <h4>{title}</h4>
+        <p>{description}</p>
+    </div>
+    {isHighlight && imageLeft && <img class="image-left" src={imageLeft} alt={title} />}
+    {isHighlight && imageRight && <img class="image-right" src={imageRight} alt={title} />}
 </div>
 
 <style>
@@ -39,13 +46,34 @@ const { icons, label, title, description, classList } = Astro.props;
         border-radius: 8px;
     }
     .highlight {
-        background: linear-gradient(135deg, var(--color-mg-original) 0%, #f5f0e8 100%);
+        border-width: 4px;
+        border-color: var(--color-primary-punch);
         margin-block-end: 2rem;
+        display: grid;
+        align-items: center;
+
+        .content {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        @media screen and (min-width: 600px) {
+            grid-template-rows: unset;
+            grid-template-columns: 1fr 1fr 1fr;
+            .content {
+                grid-column-start: unset;
+                grid-column-end: unset;
+            }
+            .image-left {
+                order: -1;
+            }
+            .image-right {
+                order: 1;
+            }
+        }
     }
 
     .ingredient-percent {
         display: inline-block;
-        background-color: var(--color-primary);
         color: white;
         padding: 0.5rem 1rem;
         border-radius: 50%;

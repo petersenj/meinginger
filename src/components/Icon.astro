@@ -18,14 +18,14 @@ const sizeMap = {
 const fontSize = sizeMap[size];
 ---
 
-<span class="icon" aria-hidden={ariaHidden} role={ariaHidden ? 'presentation' : undefined}>
-    <svg style={{ height: fontSize, width: fontSize }} viewBox="0 0 24 24">
-        <path fill="currentColor" d={svg}></path>
-    </svg>
-</span>
+<svg class="icon" aria-hidden={ariaHidden} role={ariaHidden ? 'presentation' : undefined} style={{ height: fontSize, width: fontSize }} viewBox="0 0 24 24">
+    <path fill="currentColor" d={svg}></path>
+</svg>
 
 <style>
     .icon {
         color: var(--color-primary-punch);
+        display: inline-block;
+        vertical-align: text-bottom;
     }
 </style>
