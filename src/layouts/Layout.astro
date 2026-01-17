@@ -5,9 +5,10 @@ import Footer from '../components/Footer.astro';
 
 interface Props {
     title: string;
+    url: string;
 }
 
-const { title } = Astro.props;
+const { title, url } = Astro.props;
 
 const seoData = {
     title: 'Mein Ginger - Ingwer-Mehrfruchtsaft online kaufen',
@@ -18,8 +19,8 @@ const seoData = {
     ogImageWidth: '1024',
     ogImageHeight: '688',
     ogImageAlt: 'Mein Ginger Original - Ingwer-Mehrfruchtsaft',
-    ogUrl: 'https://meinginger.de',
-    canonical: 'https://meinginger.de'
+    ogUrl: url,
+    canonical: url
 };
 
 const schemaData = {
