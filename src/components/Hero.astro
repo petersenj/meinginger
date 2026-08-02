@@ -16,7 +16,7 @@ const { page, headline, tagline, subtitle } = Astro.props;
 <style>
     .hero {
         background-attachment: fixed;
-        background-position: bottom;
+        background-position: center;
         background-size: cover;
         display: flex;
         align-items: end;
@@ -50,17 +50,11 @@ const { page, headline, tagline, subtitle } = Astro.props;
     }
 
     .hero-index {
-        background-image: url('/images/hero-index.jpg');
+        background-image: url('/images/meinginger-trio.jpg');
     }
 
     .hero-rezepte {
-        background-image: url('/images/hero-rezepte.jpg');
-    }
-
-    @media screen and (min-width: 1669px) {
-        .hero {
-            background-position: center;
-        }
+        background-image: url('/images/meinginger-trio.jpg');
     }
 
     .tagline {
