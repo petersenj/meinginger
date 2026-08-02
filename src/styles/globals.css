@@ -127,9 +127,7 @@
         border-color: currentColor;
 
         &:hover {
-            @apply text-primary/75;
-
-            background-color: transparent;
+            @apply text-primary/75 bg-white;
         }
     }
 
